@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E5C625C1CD93C88003CC4CD /* BBCMessageMultiplexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C625B1CD93C88003CC4CD /* BBCMessageMultiplexer.m */; };
+		6E5C625D1CD93CC6003CC4CD /* BBCMessageMultiplexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C625B1CD93C88003CC4CD /* BBCMessageMultiplexer.m */; };
+		6E5C62671CD93FA8003CC4CD /* BBCMockConformingProtocolTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C62661CD93FA8003CC4CD /* BBCMockConformingProtocolTarget.m */; };
+		6E5C626A1CD93FFB003CC4CD /* BBCMockNonConformingProtocolTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C62691CD93FFB003CC4CD /* BBCMockNonConformingProtocolTarget.m */; };
+		6E5C626D1CD94680003CC4CD /* BBCMethodDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C626C1CD94680003CC4CD /* BBCMethodDescription.m */; };
+		6E5C626E1CD9488D003CC4CD /* BBCMethodDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C626C1CD94680003CC4CD /* BBCMethodDescription.m */; };
+		6E5C62721CD94F18003CC4CD /* BBCMockTargetProtocolWithRequiredMethodImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C62711CD94F18003CC4CD /* BBCMockTargetProtocolWithRequiredMethodImpl.m */; };
+		6E5C62761CD9503B003CC4CD /* BBCClassMethodSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C62751CD9503B003CC4CD /* BBCClassMethodSignatureProvider.m */; };
+		6E5C62771CD9503C003CC4CD /* BBCClassMethodSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C62751CD9503B003CC4CD /* BBCClassMethodSignatureProvider.m */; };
+		6E5C627A1CD9512A003CC4CD /* BBCProtocolMethodSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C62791CD9512A003CC4CD /* BBCProtocolMethodSignatureProvider.m */; };
+		6E5C627B1CD95230003CC4CD /* BBCProtocolMethodSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C62791CD9512A003CC4CD /* BBCProtocolMethodSignatureProvider.m */; };
+		6E99B3391CD9235100C6C5CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E99B3381CD9235100C6C5CF /* main.m */; };
+		6E99B34C1CD926A700C6C5CF /* BBCMessageMultiplexerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E99B34B1CD926A700C6C5CF /* BBCMessageMultiplexerTests.m */; };
+		6E99B3511CD9284200C6C5CF /* BBCMockZeroArgumentsTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E99B3501CD9284200C6C5CF /* BBCMockZeroArgumentsTarget.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6E99B3331CD9235100C6C5CF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6E5C625A1CD93C88003CC4CD /* BBCMessageMultiplexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCMessageMultiplexer.h; path = Classes/BBCMessageMultiplexer.h; sourceTree = "<group>"; };
+		6E5C625B1CD93C88003CC4CD /* BBCMessageMultiplexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCMessageMultiplexer.m; path = Classes/BBCMessageMultiplexer.m; sourceTree = "<group>"; };
+		6E5C62641CD93F7A003CC4CD /* BBCMockTargetProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCMockTargetProtocol.h; path = "Test Mocks/BBCMockTargetProtocol.h"; sourceTree = "<group>"; };
+		6E5C62651CD93FA8003CC4CD /* BBCMockConformingProtocolTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCMockConformingProtocolTarget.h; path = "Test Mocks/BBCMockConformingProtocolTarget.h"; sourceTree = "<group>"; };
+		6E5C62661CD93FA8003CC4CD /* BBCMockConformingProtocolTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCMockConformingProtocolTarget.m; path = "Test Mocks/BBCMockConformingProtocolTarget.m"; sourceTree = "<group>"; };
+		6E5C62681CD93FFB003CC4CD /* BBCMockNonConformingProtocolTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCMockNonConformingProtocolTarget.h; path = "Test Mocks/BBCMockNonConformingProtocolTarget.h"; sourceTree = "<group>"; };
+		6E5C62691CD93FFB003CC4CD /* BBCMockNonConformingProtocolTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCMockNonConformingProtocolTarget.m; path = "Test Mocks/BBCMockNonConformingProtocolTarget.m"; sourceTree = "<group>"; };
+		6E5C626B1CD94680003CC4CD /* BBCMethodDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCMethodDescription.h; path = Classes/BBCMethodDescription.h; sourceTree = "<group>"; };
+		6E5C626C1CD94680003CC4CD /* BBCMethodDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCMethodDescription.m; path = Classes/BBCMethodDescription.m; sourceTree = "<group>"; };
+		6E5C626F1CD94F01003CC4CD /* BBCMockTargetProtocolWithRequiredMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCMockTargetProtocolWithRequiredMethod.h; path = "Test Mocks/BBCMockTargetProtocolWithRequiredMethod.h"; sourceTree = "<group>"; };
+		6E5C62701CD94F18003CC4CD /* BBCMockTargetProtocolWithRequiredMethodImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCMockTargetProtocolWithRequiredMethodImpl.h; path = "Test Mocks/BBCMockTargetProtocolWithRequiredMethodImpl.h"; sourceTree = "<group>"; };
+		6E5C62711CD94F18003CC4CD /* BBCMockTargetProtocolWithRequiredMethodImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCMockTargetProtocolWithRequiredMethodImpl.m; path = "Test Mocks/BBCMockTargetProtocolWithRequiredMethodImpl.m"; sourceTree = "<group>"; };
+		6E5C62731CD95027003CC4CD /* BBCMethodSignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCMethodSignatureProvider.h; path = Classes/BBCMethodSignatureProvider.h; sourceTree = "<group>"; };
+		6E5C62741CD9503B003CC4CD /* BBCClassMethodSignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCClassMethodSignatureProvider.h; path = Classes/BBCClassMethodSignatureProvider.h; sourceTree = "<group>"; };
+		6E5C62751CD9503B003CC4CD /* BBCClassMethodSignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCClassMethodSignatureProvider.m; path = Classes/BBCClassMethodSignatureProvider.m; sourceTree = "<group>"; };
+		6E5C62781CD9512A003CC4CD /* BBCProtocolMethodSignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCProtocolMethodSignatureProvider.h; path = Classes/BBCProtocolMethodSignatureProvider.h; sourceTree = "<group>"; };
+		6E5C62791CD9512A003CC4CD /* BBCProtocolMethodSignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCProtocolMethodSignatureProvider.m; path = Classes/BBCProtocolMethodSignatureProvider.m; sourceTree = "<group>"; };
+		6E99B3351CD9235100C6C5CF /* MultiplexDispatcher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MultiplexDispatcher; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E99B3381CD9235100C6C5CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6E99B3431CD9267200C6C5CF /* MultiplexDispatcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiplexDispatcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E99B3471CD9267200C6C5CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E99B34B1CD926A700C6C5CF /* BBCMessageMultiplexerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCMessageMultiplexerTests.m; path = "Test Cases/BBCMessageMultiplexerTests.m"; sourceTree = "<group>"; };
+		6E99B34F1CD9284200C6C5CF /* BBCMockZeroArgumentsTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCMockZeroArgumentsTarget.h; path = "Test Mocks/BBCMockZeroArgumentsTarget.h"; sourceTree = "<group>"; };
+		6E99B3501CD9284200C6C5CF /* BBCMockZeroArgumentsTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCMockZeroArgumentsTarget.m; path = "Test Mocks/BBCMockZeroArgumentsTarget.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E99B3321CD9235100C6C5CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E99B3401CD9267200C6C5CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E5C62591CD93C7D003CC4CD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6E5C625A1CD93C88003CC4CD /* BBCMessageMultiplexer.h */,
+				6E5C625B1CD93C88003CC4CD /* BBCMessageMultiplexer.m */,
+				6E5C626B1CD94680003CC4CD /* BBCMethodDescription.h */,
+				6E5C626C1CD94680003CC4CD /* BBCMethodDescription.m */,
+				6E5C62731CD95027003CC4CD /* BBCMethodSignatureProvider.h */,
+				6E5C62741CD9503B003CC4CD /* BBCClassMethodSignatureProvider.h */,
+				6E5C62751CD9503B003CC4CD /* BBCClassMethodSignatureProvider.m */,
+				6E5C62781CD9512A003CC4CD /* BBCProtocolMethodSignatureProvider.h */,
+				6E5C62791CD9512A003CC4CD /* BBCProtocolMethodSignatureProvider.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		6E99B32C1CD9235000C6C5CF = {
+			isa = PBXGroup;
+			children = (
+				6E99B3371CD9235100C6C5CF /* MultiplexDispatcher */,
+				6E99B3441CD9267200C6C5CF /* MultiplexDispatcherTests */,
+				6E99B3361CD9235100C6C5CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E99B3361CD9235100C6C5CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E99B3351CD9235100C6C5CF /* MultiplexDispatcher */,
+				6E99B3431CD9267200C6C5CF /* MultiplexDispatcherTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E99B3371CD9235100C6C5CF /* MultiplexDispatcher */ = {
+			isa = PBXGroup;
+			children = (
+				6E99B3381CD9235100C6C5CF /* main.m */,
+				6E5C62591CD93C7D003CC4CD /* Classes */,
+			);
+			path = MultiplexDispatcher;
+			sourceTree = "<group>";
+		};
+		6E99B3441CD9267200C6C5CF /* MultiplexDispatcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E99B3471CD9267200C6C5CF /* Info.plist */,
+				6E99B34D1CD9278E00C6C5CF /* Test Cases */,
+				6E99B34E1CD9283500C6C5CF /* Test Mocks */,
+			);
+			path = MultiplexDispatcherTests;
+			sourceTree = "<group>";
+		};
+		6E99B34D1CD9278E00C6C5CF /* Test Cases */ = {
+			isa = PBXGroup;
+			children = (
+				6E99B34B1CD926A700C6C5CF /* BBCMessageMultiplexerTests.m */,
+			);
+			name = "Test Cases";
+			sourceTree = "<group>";
+		};
+		6E99B34E1CD9283500C6C5CF /* Test Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				6E99B34F1CD9284200C6C5CF /* BBCMockZeroArgumentsTarget.h */,
+				6E99B3501CD9284200C6C5CF /* BBCMockZeroArgumentsTarget.m */,
+				6E5C62641CD93F7A003CC4CD /* BBCMockTargetProtocol.h */,
+				6E5C62651CD93FA8003CC4CD /* BBCMockConformingProtocolTarget.h */,
+				6E5C62661CD93FA8003CC4CD /* BBCMockConformingProtocolTarget.m */,
+				6E5C62681CD93FFB003CC4CD /* BBCMockNonConformingProtocolTarget.h */,
+				6E5C62691CD93FFB003CC4CD /* BBCMockNonConformingProtocolTarget.m */,
+				6E5C626F1CD94F01003CC4CD /* BBCMockTargetProtocolWithRequiredMethod.h */,
+				6E5C62701CD94F18003CC4CD /* BBCMockTargetProtocolWithRequiredMethodImpl.h */,
+				6E5C62711CD94F18003CC4CD /* BBCMockTargetProtocolWithRequiredMethodImpl.m */,
+			);
+			name = "Test Mocks";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E99B3341CD9235100C6C5CF /* MultiplexDispatcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E99B33C1CD9235100C6C5CF /* Build configuration list for PBXNativeTarget "MultiplexDispatcher" */;
+			buildPhases = (
+				6E99B3311CD9235100C6C5CF /* Sources */,
+				6E99B3321CD9235100C6C5CF /* Frameworks */,
+				6E99B3331CD9235100C6C5CF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MultiplexDispatcher;
+			productName = MultiplexDispatcher;
+			productReference = 6E99B3351CD9235100C6C5CF /* MultiplexDispatcher */;
+			productType = "com.apple.product-type.tool";
+		};
+		6E99B3421CD9267200C6C5CF /* MultiplexDispatcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E99B3481CD9267200C6C5CF /* Build configuration list for PBXNativeTarget "MultiplexDispatcherTests" */;
+			buildPhases = (
+				6E99B33F1CD9267200C6C5CF /* Sources */,
+				6E99B3401CD9267200C6C5CF /* Frameworks */,
+				6E99B3411CD9267200C6C5CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MultiplexDispatcherTests;
+			productName = MultiplexDispatcherTests;
+			productReference = 6E99B3431CD9267200C6C5CF /* MultiplexDispatcherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E99B32D1CD9235000C6C5CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = BBC;
+				TargetAttributes = {
+					6E99B3341CD9235100C6C5CF = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					6E99B3421CD9267200C6C5CF = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 6E99B3301CD9235000C6C5CF /* Build configuration list for PBXProject "MultiplexDispatcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6E99B32C1CD9235000C6C5CF;
+			productRefGroup = 6E99B3361CD9235100C6C5CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E99B3341CD9235100C6C5CF /* MultiplexDispatcher */,
+				6E99B3421CD9267200C6C5CF /* MultiplexDispatcherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E99B3411CD9267200C6C5CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E99B3311CD9235100C6C5CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E5C62761CD9503B003CC4CD /* BBCClassMethodSignatureProvider.m in Sources */,
+				6E99B3391CD9235100C6C5CF /* main.m in Sources */,
+				6E5C625C1CD93C88003CC4CD /* BBCMessageMultiplexer.m in Sources */,
+				6E5C627A1CD9512A003CC4CD /* BBCProtocolMethodSignatureProvider.m in Sources */,
+				6E5C626D1CD94680003CC4CD /* BBCMethodDescription.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E99B33F1CD9267200C6C5CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E5C62771CD9503C003CC4CD /* BBCClassMethodSignatureProvider.m in Sources */,
+				6E5C62671CD93FA8003CC4CD /* BBCMockConformingProtocolTarget.m in Sources */,
+				6E5C625D1CD93CC6003CC4CD /* BBCMessageMultiplexer.m in Sources */,
+				6E5C626A1CD93FFB003CC4CD /* BBCMockNonConformingProtocolTarget.m in Sources */,
+				6E99B34C1CD926A700C6C5CF /* BBCMessageMultiplexerTests.m in Sources */,
+				6E99B3511CD9284200C6C5CF /* BBCMockZeroArgumentsTarget.m in Sources */,
+				6E5C62721CD94F18003CC4CD /* BBCMockTargetProtocolWithRequiredMethodImpl.m in Sources */,
+				6E5C627B1CD95230003CC4CD /* BBCProtocolMethodSignatureProvider.m in Sources */,
+				6E5C626E1CD9488D003CC4CD /* BBCMethodDescription.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6E99B33A1CD9235100C6C5CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+				);
+			};
+			name = Debug;
+		};
+		6E99B33B1CD9235100C6C5CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+				);
+			};
+			name = Release;
+		};
+		6E99B33D1CD9235100C6C5CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6E99B33E1CD9235100C6C5CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6E99B3491CD9267200C6C5CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MultiplexDispatcherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.bbc.MultiplexDispatcherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6E99B34A1CD9267200C6C5CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MultiplexDispatcherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.bbc.MultiplexDispatcherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E99B3301CD9235000C6C5CF /* Build configuration list for PBXProject "MultiplexDispatcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E99B33A1CD9235100C6C5CF /* Debug */,
+				6E99B33B1CD9235100C6C5CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E99B33C1CD9235100C6C5CF /* Build configuration list for PBXNativeTarget "MultiplexDispatcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E99B33D1CD9235100C6C5CF /* Debug */,
+				6E99B33E1CD9235100C6C5CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E99B3481CD9267200C6C5CF /* Build configuration list for PBXNativeTarget "MultiplexDispatcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E99B3491CD9267200C6C5CF /* Debug */,
+				6E99B34A1CD9267200C6C5CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E99B32D1CD9235000C6C5CF /* Project object */;
+}
