@@ -93,4 +93,53 @@
     XCTAssertFalse(target.receievedMessage);
 }
 
+- (void)testPerformanceWhenDispatchingMessageWithClassTargets
+{
+    BBCMessageMultiplexer<BBCMockZeroArgumentsTarget*>* sut = [[BBCMessageMultiplexer alloc] initWithTargetClass:[BBCMockZeroArgumentsTarget class]];
+    [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockZeroArgumentsTarget class]];
+
+    [self measureBlock:^{
+        [[sut dispatch] zeroArgumentsMessage];
+    }];
+}
+
+- (void)testPerformanceWhenDistachingMessageWithProtocolTargetsWhereTargetsImplementsRequiredMethod
+{
+    BBCMessageMultiplexer<id<BBCMockTargetProtocolWithRequiredMethod> >* sut = [[BBCMessageMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocolWithRequiredMethod)];
+    [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockTargetProtocolWithRequiredMethodImpl class]];
+
+    [self measureBlock:^{
+        [[sut dispatch] performRequiredMethod];
+    }];
+}
+
+- (void)testPerformanceWhenDisatchingMesssageWithProtocolTargetsWhereTargetsDoNotImplementOptionalMethod
+{
+    BBCMessageMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMessageMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
+    [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockNonConformingProtocolTarget class]];
+
+    [self measureBlock:^{
+        [[sut dispatch] notify];
+    }];
+}
+
+- (void)testPerformanceWhenDispatchingMessageWithProtocolTargetsWhereTargetImplementsOptionalMethod
+{
+    BBCMessageMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMessageMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
+    [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockConformingProtocolTarget class]];
+
+    [self measureBlock:^{
+        [[sut dispatch] notify];
+    }];
+}
+
+- (void)prepareMultiplexer:(BBCMessageMultiplexer*)multiplexer forPerformanceTestWithConcreteTargetClass:(Class)targetClass
+{
+    NSUInteger targetsCount = 1E6;
+    for (NSUInteger counter = 0; counter < targetsCount; counter++) {
+        id target = [targetClass new];
+        [multiplexer addTarget:target];
+    }
+}
+
 @end
