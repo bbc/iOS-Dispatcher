@@ -6,15 +6,12 @@
 //  Copyright © 2016 BBC. All rights reserved.
 //
 
-#import "BBCClassMethodSignatureProvider.h"
 #import "BBCMessageMultiplexer.h"
-#import "BBCProtocolMethodSignatureProvider.h"
+#import "BBCMultiplexerProxy.h"
 
 @interface BBCMessageMultiplexer ()
 
-@property (nonatomic, strong) id<BBCMethodSignatureProvider> _methodSignatureProvider;
-@property (nonatomic, strong) NSMutableSet* targets;
-@property (nonatomic, strong) NSInvocation* lastInvocation;
+@property (nonatomic, strong) BBCMultiplexerProxy* proxy;
 
 @end
 
@@ -31,20 +28,19 @@
 
 - (instancetype)initWithTargetClass:(Class)targetClass
 {
-    return [self initWithMethodSignatureProvider:[[BBCClassMethodSignatureProvider alloc] initWithClass:targetClass]];
+    self = [super init];
+    if (self) {
+        _proxy = [[BBCMultiplexerProxy alloc] initWithTargetClass:targetClass];
+    }
+
+    return self;
 }
 
 - (instancetype)initWithTargetProtocol:(Protocol*)targetProtocol
 {
-    return [self initWithMethodSignatureProvider:[[BBCProtocolMethodSignatureProvider alloc] initWithProtocol:targetProtocol]];
-}
-
-- (instancetype)initWithMethodSignatureProvider:(id<BBCMethodSignatureProvider>)methodSignatureProvider
-{
     self = [super init];
     if (self) {
-        __methodSignatureProvider = methodSignatureProvider;
-        _targets = [NSMutableSet set];
+        _proxy = [[BBCMultiplexerProxy alloc] initWithTargetProtocol:targetProtocol];
     }
 
     return self;
@@ -54,53 +50,17 @@
 
 - (void)addTarget:(id)target
 {
-    [_targets addObject:target];
-    [self performInvocation:_lastInvocation target:target];
+    [_proxy addTarget:target];
 }
 
 - (void)removeTarget:(id)target
 {
-    [_targets removeObject:target];
+    [_proxy removeTarget:target];
 }
 
 - (id)dispatch
 {
-    return self;
-}
-
-#pragma mark Overrides
-
-- (id)forwardingTargetForSelector:(__unused SEL)aSelector
-{
-    return self;
-}
-
-- (NSMethodSignature*)methodSignatureForSelector:(SEL)aSelector
-{
-    NSMethodSignature* signature = [super methodSignatureForSelector:aSelector];
-    if (!signature) {
-        signature = [__methodSignatureProvider targetInstanceMethodSignatureForSelector:aSelector];
-    }
-
-    return signature;
-}
-
-- (void)forwardInvocation:(NSInvocation*)anInvocation
-{
-    _lastInvocation = anInvocation;
-
-    for (id target in _targets) {
-        [self performInvocation:anInvocation target:target];
-    }
-}
-
-#pragma mark Private
-
-- (void)performInvocation:(NSInvocation*)invocation target:(id)target
-{
-    if ([target respondsToSelector:invocation.selector]) {
-        [invocation invokeWithTarget:target];
-    }
+    return _proxy;
 }
 
 @end

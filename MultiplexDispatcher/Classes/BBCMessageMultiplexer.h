@@ -8,15 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol BBCMethodSignatureProvider;
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BBCMessageMultiplexer <__covariant Target> : NSObject
 
 - (instancetype)initWithTargetClass:(Class)targetClass;
 - (instancetype)initWithTargetProtocol:(Protocol*)targetProtocol;
-- (instancetype)initWithMethodSignatureProvider:(id<BBCMethodSignatureProvider>)methodSignatureProvider NS_DESIGNATED_INITIALIZER;
 
 - (void)addTarget:(Target)target;
 - (void)removeTarget:(Target)target;
