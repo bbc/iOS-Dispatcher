@@ -4,3 +4,4 @@
 
 #import "BBCMessageMultiplexer.h"
 #import "BBCMockZeroArgumentsTarget.h"
+#import "BBCMultiplexerProxy.h"

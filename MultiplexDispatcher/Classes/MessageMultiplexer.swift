@@ -11,14 +11,14 @@ import ObjectiveC
 
 public class MessageMultiplexer<Target: NSObjectProtocol>: NSObject {
     
-    private let multiplexer: BBCMessageMultiplexer
+    private let proxy: BBCMultiplexerProxy
     
     public init(class aClass: Target.Type) {
-        multiplexer = BBCMessageMultiplexer(targetClass: aClass)
-    }    
+        proxy = BBCMultiplexerProxy(targetClass: aClass)
+    }
     
     public func addTarget(target: Target) {
-        multiplexer.addTarget(target)
+        proxy.addTarget(target)
     }
     
     public func removeTarget(target: Target) {
@@ -26,7 +26,7 @@ public class MessageMultiplexer<Target: NSObjectProtocol>: NSObject {
     }
     
     public func dispatch() -> Target {
-        guard let target = multiplexer.dispatch() as? Target else {
+        guard let target = proxy as? Target else {
             fatalError("Proxy class not configured to mimic \(Target.self)")
         }
         
