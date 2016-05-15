@@ -26,7 +26,7 @@ public class MessageMultiplexer<Target: NSObjectProtocol>: NSObject {
     }
     
     public func removeTarget(target: Target) {
-        
+        proxy.removeTarget(target)
     }
     
     public func dispatch() -> Target {

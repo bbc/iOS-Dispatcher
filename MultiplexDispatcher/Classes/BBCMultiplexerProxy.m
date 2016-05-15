@@ -80,7 +80,9 @@
 
 - (BOOL)isKindOfClass:(Class)aClass
 {
-    return [super isKindOfClass:aClass] || [_targetClass isKindOfClass:aClass];
+    return [super isKindOfClass:aClass] ||
+        [_targetClass isKindOfClass:aClass] ||
+        [_targetClass isSubclassOfClass:aClass];
 }
 
 - (BOOL)conformsToProtocol:(Protocol*)aProtocol

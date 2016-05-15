@@ -30,4 +30,14 @@ class MessageMultiplexerTests: XCTestCase {
         XCTAssertTrue(target.notified)
     }
     
+    func testRemovingTargetThenDispatchingMessageDoesNotNotifyTarget() {
+        let sut = MessageMultiplexer(class: BBCMockZeroArgumentsTarget.self)
+        let target = BBCMockZeroArgumentsTarget()
+        sut.addTarget(target)
+        sut.removeTarget(target)
+        sut.dispatch().zeroArgumentsMessage()
+        
+        XCTAssertFalse(target.receievedMessage)
+    }
+    
 }
