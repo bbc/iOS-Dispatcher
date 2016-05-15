@@ -44,6 +44,17 @@
     return self;
 }
 
+- (instancetype)initWithTargetProtocolName:(NSString*)protocolName
+{
+    Protocol* protocol = NSProtocolFromString(protocolName);
+    if (protocol) {
+        return self = [self initWithTargetProtocol:protocol];
+    }
+    else {
+        return nil;
+    }
+}
+
 - (instancetype)initWithMethodSignatureProvider:(id<BBCMethodSignatureProvider>)methodSignatureProvider
 {
     _methodSignatureProvider = methodSignatureProvider;

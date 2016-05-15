@@ -8,12 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface BBCMultiplexerProxy : NSProxy
 
 - (instancetype)initWithTargetClass:(Class)aClass;
 - (instancetype)initWithTargetProtocol:(Protocol *)aProtocol;
+- (instancetype)initWithTargetProtocolName:(NSString *)protocolName;
 
 - (void)addTarget:(id)target;
 - (void)removeTarget:(id)target;
 
 @end
+
+NS_ASSUME_NONNULL_END

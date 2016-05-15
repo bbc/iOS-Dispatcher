@@ -17,6 +17,17 @@ class MessageMultiplexerTests: XCTestCase {
         let target = BBCMockZeroArgumentsTarget()
         sut.addTarget(target)
         sut.dispatch().zeroArgumentsMessage()
+        
+        XCTAssertTrue(target.receievedMessage)
+    }
+    
+    func testForwardingMessageForProtocolType() {
+        let sut: MessageMultiplexer<BBCMockTargetProtocol> = MessageMultiplexer(protocol: BBCMockTargetProtocol.self)
+        let target = BBCMockConformingProtocolTarget()
+        sut.addTarget(target)
+        sut.dispatch().notify?()
+        
+        XCTAssertTrue(target.notified)
     }
     
 }

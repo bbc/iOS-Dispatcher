@@ -17,6 +17,10 @@ public class MessageMultiplexer<Target: NSObjectProtocol>: NSObject {
         proxy = BBCMultiplexerProxy(targetClass: aClass)
     }
     
+    public init(protocol aProtocol: Protocol) {
+        proxy = BBCMultiplexerProxy(targetProtocolName: NSStringFromProtocol(aProtocol))
+    }
+    
     public func addTarget(target: Target) {
         proxy.addTarget(target)
     }

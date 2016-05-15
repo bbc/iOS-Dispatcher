@@ -3,5 +3,8 @@
 //
 
 #import "BBCMessageMultiplexer.h"
+#import "BBCMockConformingProtocolTarget.h"
+#import "BBCMockNonConformingProtocolTarget.h"
+#import "BBCMockTargetProtocol.h"
 #import "BBCMockZeroArgumentsTarget.h"
 #import "BBCMultiplexerProxy.h"
