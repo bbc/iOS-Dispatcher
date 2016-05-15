@@ -13,7 +13,7 @@ class MessageMultiplexerTests: XCTestCase {
     // MARK: Tests
     
     func testForwardingMessageForClassType() {
-        let sut = MessageMultiplexer(class: BBCMockZeroArgumentsTarget.self)
+        var sut = MessageMultiplexer(class: BBCMockZeroArgumentsTarget.self)
         let target = BBCMockZeroArgumentsTarget()
         sut.addTarget(target)
         sut.dispatch().zeroArgumentsMessage()
@@ -22,7 +22,7 @@ class MessageMultiplexerTests: XCTestCase {
     }
     
     func testForwardingMessageForProtocolType() {
-        let sut: MessageMultiplexer<BBCMockTargetProtocol> = MessageMultiplexer(protocol: BBCMockTargetProtocol.self)
+        var sut: MessageMultiplexer<BBCMockTargetProtocol> = MessageMultiplexer(protocol: BBCMockTargetProtocol.self)
         let target = BBCMockConformingProtocolTarget()
         sut.addTarget(target)
         sut.dispatch().notify?()
@@ -31,7 +31,7 @@ class MessageMultiplexerTests: XCTestCase {
     }
     
     func testRemovingTargetThenDispatchingMessageDoesNotNotifyTarget() {
-        let sut = MessageMultiplexer(class: BBCMockZeroArgumentsTarget.self)
+        var sut = MessageMultiplexer(class: BBCMockZeroArgumentsTarget.self)
         let target = BBCMockZeroArgumentsTarget()
         sut.addTarget(target)
         sut.removeTarget(target)

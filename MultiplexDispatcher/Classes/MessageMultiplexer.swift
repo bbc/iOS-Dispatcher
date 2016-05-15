@@ -7,11 +7,15 @@
 //
 
 import Foundation
-import ObjectiveC
 
-public class MessageMultiplexer<Target: NSObjectProtocol>: NSObject {
+public struct MessageMultiplexer<Target: NSObjectProtocol> {
+    
+    // MARK: Properties
     
     private let proxy: BBCMultiplexerProxy
+    
+    
+    // MARK: Initialization
     
     public init(class aClass: Target.Type) {
         proxy = BBCMultiplexerProxy(targetClass: aClass)
@@ -21,15 +25,18 @@ public class MessageMultiplexer<Target: NSObjectProtocol>: NSObject {
         proxy = BBCMultiplexerProxy(targetProtocolName: NSStringFromProtocol(aProtocol))
     }
     
-    public func addTarget(target: Target) {
+    
+    // MARK: Dispatch Management
+    
+    public mutating func addTarget(target: Target) {
         proxy.addTarget(target)
     }
     
-    public func removeTarget(target: Target) {
+    public mutating func removeTarget(target: Target) {
         proxy.removeTarget(target)
     }
     
-    public func dispatch() -> Target {
+    public nonmutating func dispatch() -> Target {
         guard let target = proxy as? Target else {
             fatalError("Proxy class not configured to mimic \(Target.self)")
         }
