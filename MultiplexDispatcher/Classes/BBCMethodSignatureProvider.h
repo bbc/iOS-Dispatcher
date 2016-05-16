@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol BBCMethodSignatureProvider <NSObject>
 @required
 
+@property (nonatomic, readonly) NSArray<NSString*>* selectors;
+
 - (nullable NSMethodSignature*)targetInstanceMethodSignatureForSelector:(SEL)aSelector;
 
 @end

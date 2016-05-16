@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) Protocol* targetProtocol;
 @property (nonatomic, strong) NSMutableSet<BBCMethodDescription*>* methodDescriptions;
+@property (nonatomic, strong) NSMutableSet<NSString*>* allCachedSelectors;
 
 @end
 
@@ -27,11 +28,17 @@
     if (self) {
         _targetProtocol = protocol;
         _methodDescriptions = [NSMutableSet set];
+        _allCachedSelectors = [NSMutableSet set];
 
         [self prepareMethodDescriptionsForProtocol:_targetProtocol];
     }
 
     return self;
+}
+
+- (NSArray<NSString*>*)selectors
+{
+    return _allCachedSelectors.allObjects;
 }
 
 - (NSMethodSignature*)targetInstanceMethodSignatureForSelector:(SEL)aSelector
@@ -84,6 +91,7 @@
         struct objc_method_description methodDescription = methods[index];
         BBCMethodDescription* description = [[BBCMethodDescription alloc] initWithObjCMethodDescription:methodDescription];
         [methodDescriptions addObject:description];
+        [_allCachedSelectors addObject:NSStringFromSelector(description.selector)];
     }
 
     free(methods);

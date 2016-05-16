@@ -6,8 +6,10 @@
 //  Copyright © 2016 BBC. All rights reserved.
 //
 
+#import "BBCCachingMethodSignatureProvider.h"
 #import "BBCClassMethodSignatureProvider.h"
 #import "BBCMultiplexerProxy.h"
+#import "BBCMultiplexerTargetsCollection.h"
 #import "BBCProtocolMethodSignatureProvider.h"
 #import <objc/runtime.h>
 
@@ -16,7 +18,7 @@
 @property (nonatomic, strong) id<BBCMethodSignatureProvider> methodSignatureProvider;
 @property (nonatomic, strong) Class targetClass;
 @property (nonatomic, strong) Protocol* targetProtocol;
-@property (nonatomic, strong) NSMutableSet* targets;
+@property (nonatomic, strong) BBCMultiplexerTargetsCollection* targets;
 @property (nonatomic, strong) NSInvocation* lastInvocation;
 
 @end
@@ -57,8 +59,8 @@
 
 - (instancetype)initWithMethodSignatureProvider:(id<BBCMethodSignatureProvider>)methodSignatureProvider
 {
-    _methodSignatureProvider = methodSignatureProvider;
-    _targets = [NSMutableSet set];
+    _methodSignatureProvider = [[BBCCachingMethodSignatureProvider alloc] initWithMethodSignatureProvider:methodSignatureProvider];
+    _targets = [[BBCMultiplexerTargetsCollection alloc] initWithTargetSelectors:methodSignatureProvider.selectors];
 
     return self;
 }
@@ -67,27 +69,28 @@
 
 - (void)addTarget:(id)target
 {
-    [_targets addObject:target];
-    [self performInvocation:_lastInvocation target:target];
+    [_targets addTarget:target];
+
+    if (_lastInvocation && [target respondsToSelector:_lastInvocation.selector]) {
+        [_lastInvocation invokeWithTarget:target];
+    }
 }
 
 - (void)removeTarget:(id)target
 {
-    [_targets removeObject:target];
+    [_targets removeTarget:target];
 }
 
 #pragma mark Overrides
 
 - (BOOL)isKindOfClass:(Class)aClass
 {
-    return [super isKindOfClass:aClass] ||
-        [_targetClass isKindOfClass:aClass] ||
-        [_targetClass isSubclassOfClass:aClass];
+    return [_targetClass isKindOfClass:aClass] || [_targetClass isSubclassOfClass:aClass];
 }
 
 - (BOOL)conformsToProtocol:(Protocol*)aProtocol
 {
-    return [super conformsToProtocol:aProtocol] || protocol_conformsToProtocol(_targetProtocol, aProtocol);
+    return protocol_conformsToProtocol(_targetProtocol, aProtocol);
 }
 
 - (NSMethodSignature*)methodSignatureForSelector:(SEL)sel
@@ -99,16 +102,7 @@
 {
     _lastInvocation = invocation;
 
-    for (id target in _targets) {
-        [self performInvocation:invocation target:target];
-    }
-}
-
-#pragma mark Private
-
-- (void)performInvocation:(NSInvocation*)invocation target:(id)target
-{
-    if ([target respondsToSelector:invocation.selector]) {
+    for (id target in [_targets targetsRespondingToSelector:invocation.selector]) {
         [invocation invokeWithTarget:target];
     }
 }

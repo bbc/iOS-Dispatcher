@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B3EAE731CE9ACAA00D58DF8 /* BBCCachingMethodSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3EAE721CE9ACAA00D58DF8 /* BBCCachingMethodSignatureProvider.m */; };
+		4B3EAE741CE9AE2400D58DF8 /* BBCCachingMethodSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3EAE721CE9ACAA00D58DF8 /* BBCCachingMethodSignatureProvider.m */; };
+		4B3EAE771CE9B15B00D58DF8 /* BBCMultiplexerTargetsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3EAE761CE9B15B00D58DF8 /* BBCMultiplexerTargetsCollection.m */; };
+		4B3EAE781CE9B16200D58DF8 /* BBCMultiplexerTargetsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3EAE761CE9B15B00D58DF8 /* BBCMultiplexerTargetsCollection.m */; };
 		4BA4ABC21CDC839100D128B9 /* MessageMultiplexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4ABC11CDC839100D128B9 /* MessageMultiplexer.swift */; };
 		4BA4ABC31CDC839100D128B9 /* MessageMultiplexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4ABC11CDC839100D128B9 /* MessageMultiplexer.swift */; };
 		4BA4ABC51CDC845A00D128B9 /* MessageMultiplexerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4ABC41CDC845A00D128B9 /* MessageMultiplexerTests.swift */; };
@@ -41,6 +45,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4B3EAE711CE9ACAA00D58DF8 /* BBCCachingMethodSignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCCachingMethodSignatureProvider.h; path = Classes/BBCCachingMethodSignatureProvider.h; sourceTree = "<group>"; };
+		4B3EAE721CE9ACAA00D58DF8 /* BBCCachingMethodSignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCCachingMethodSignatureProvider.m; path = Classes/BBCCachingMethodSignatureProvider.m; sourceTree = "<group>"; };
+		4B3EAE751CE9B15B00D58DF8 /* BBCMultiplexerTargetsCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCMultiplexerTargetsCollection.h; path = Classes/BBCMultiplexerTargetsCollection.h; sourceTree = "<group>"; };
+		4B3EAE761CE9B15B00D58DF8 /* BBCMultiplexerTargetsCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCMultiplexerTargetsCollection.m; path = Classes/BBCMultiplexerTargetsCollection.m; sourceTree = "<group>"; };
 		4BA4ABBF1CDC838F00D128B9 /* MultiplexDispatcher-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MultiplexDispatcher-Bridging-Header.h"; sourceTree = "<group>"; };
 		4BA4ABC11CDC839100D128B9 /* MessageMultiplexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageMultiplexer.swift; path = Classes/MessageMultiplexer.swift; sourceTree = "<group>"; };
 		4BA4ABC41CDC845A00D128B9 /* MessageMultiplexerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageMultiplexerTests.swift; path = "Test Cases/MessageMultiplexerTests.swift"; sourceTree = "<group>"; };
@@ -107,6 +115,10 @@
 				4BA4ABC11CDC839100D128B9 /* MessageMultiplexer.swift */,
 				4BA4ABC71CDC888400D128B9 /* BBCMultiplexerProxy.h */,
 				4BA4ABC81CDC888400D128B9 /* BBCMultiplexerProxy.m */,
+				4B3EAE711CE9ACAA00D58DF8 /* BBCCachingMethodSignatureProvider.h */,
+				4B3EAE721CE9ACAA00D58DF8 /* BBCCachingMethodSignatureProvider.m */,
+				4B3EAE751CE9B15B00D58DF8 /* BBCMultiplexerTargetsCollection.h */,
+				4B3EAE761CE9B15B00D58DF8 /* BBCMultiplexerTargetsCollection.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -263,9 +275,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B3EAE731CE9ACAA00D58DF8 /* BBCCachingMethodSignatureProvider.m in Sources */,
 				6E5C62761CD9503B003CC4CD /* BBCClassMethodSignatureProvider.m in Sources */,
 				6E99B3391CD9235100C6C5CF /* main.m in Sources */,
 				6E5C625C1CD93C88003CC4CD /* BBCMessageMultiplexer.m in Sources */,
+				4B3EAE771CE9B15B00D58DF8 /* BBCMultiplexerTargetsCollection.m in Sources */,
 				4BA4ABC21CDC839100D128B9 /* MessageMultiplexer.swift in Sources */,
 				6E5C627A1CD9512A003CC4CD /* BBCProtocolMethodSignatureProvider.m in Sources */,
 				4BA4ABC91CDC888400D128B9 /* BBCMultiplexerProxy.m in Sources */,
@@ -280,6 +294,8 @@
 				6E5C62771CD9503C003CC4CD /* BBCClassMethodSignatureProvider.m in Sources */,
 				6E5C62671CD93FA8003CC4CD /* BBCMockConformingProtocolTarget.m in Sources */,
 				6E5C625D1CD93CC6003CC4CD /* BBCMessageMultiplexer.m in Sources */,
+				4B3EAE741CE9AE2400D58DF8 /* BBCCachingMethodSignatureProvider.m in Sources */,
+				4B3EAE781CE9B16200D58DF8 /* BBCMultiplexerTargetsCollection.m in Sources */,
 				4BA4ABC31CDC839100D128B9 /* MessageMultiplexer.swift in Sources */,
 				6E5C626A1CD93FFB003CC4CD /* BBCMockNonConformingProtocolTarget.m in Sources */,
 				6E99B34C1CD926A700C6C5CF /* BBCMessageMultiplexerTests.m in Sources */,
