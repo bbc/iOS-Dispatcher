@@ -22,7 +22,7 @@ public struct Multiplexer<Target: NSObjectProtocol> {
     }
     
     public init(protocol aProtocol: Protocol) {
-        proxy = BBCMultiplexerProxy(targetProtocolName: NSStringFromProtocol(aProtocol))
+        proxy = BBCMultiplexerProxy(targetProtocol: aProtocol)
     }
     
     

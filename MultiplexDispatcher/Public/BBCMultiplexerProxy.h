@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithTargetClass:(Class)aClass;
 - (instancetype)initWithTargetProtocol:(Protocol *)aProtocol;
-- (instancetype)initWithTargetProtocolName:(NSString *)protocolName;
 
 - (void)addTarget:(id)target;
 - (void)removeTarget:(id)target;
