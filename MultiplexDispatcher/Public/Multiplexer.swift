@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct MessageMultiplexer<Target: NSObjectProtocol> {
+public struct Multiplexer<Target: NSObjectProtocol> {
     
     // MARK: Properties
     

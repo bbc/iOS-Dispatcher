@@ -1,30 +1,30 @@
 //
-//  BBCMessageMultiplexerTests.m
+//  BBCMultiplexerTests.m
 //  MultiplexDispatcher
 //
 //  Created by Thomas Sherwood on 03/05/2016.
 //  Copyright © 2016 BBC. All rights reserved.
 //
 
-#import "BBCMessageMultiplexer.h"
+#import "BBCMultiplexer.h"
 #import "BBCMockConformingProtocolTarget.h"
 #import "BBCMockNonConformingProtocolTarget.h"
 #import "BBCMockTargetProtocolWithRequiredMethodImpl.h"
 #import "BBCMockZeroArgumentsTarget.h"
 #import <XCTest/XCTest.h>
 
-@interface BBCMessageMultiplexerTests : XCTestCase
+@interface BBCMultiplexerTests : XCTestCase
 @end
 
 #pragma mark -
 
-@implementation BBCMessageMultiplexerTests
+@implementation BBCMultiplexerTests
 
 #pragma mark Tests
 
 - (void)testClassDispatchPropogatesMessageToTarget
 {
-    BBCMessageMultiplexer<BBCMockZeroArgumentsTarget*>* sut = [[BBCMessageMultiplexer alloc] initWithTargetClass:[BBCMockZeroArgumentsTarget class]];
+    BBCMultiplexer<BBCMockZeroArgumentsTarget*>* sut = [[BBCMultiplexer alloc] initWithTargetClass:[BBCMockZeroArgumentsTarget class]];
     BBCMockZeroArgumentsTarget* target = [BBCMockZeroArgumentsTarget new];
     [sut addTarget:target];
     [[sut dispatch] zeroArgumentsMessage];
@@ -34,7 +34,7 @@
 
 - (void)testAddingTargetAfterClassDispatchPropogatesPreviousMessageToTarget
 {
-    BBCMessageMultiplexer<BBCMockZeroArgumentsTarget*>* sut = [[BBCMessageMultiplexer alloc] initWithTargetClass:[BBCMockZeroArgumentsTarget class]];
+    BBCMultiplexer<BBCMockZeroArgumentsTarget*>* sut = [[BBCMultiplexer alloc] initWithTargetClass:[BBCMockZeroArgumentsTarget class]];
     BBCMockZeroArgumentsTarget* target = [BBCMockZeroArgumentsTarget new];
     [[sut dispatch] zeroArgumentsMessage];
     [sut addTarget:target];
@@ -44,7 +44,7 @@
 
 - (void)testProtocolDispatchPropogatesMessageToOptionalConformer
 {
-    BBCMessageMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMessageMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
+    BBCMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
     BBCMockConformingProtocolTarget* target = [BBCMockConformingProtocolTarget new];
     [sut addTarget:target];
     [[sut dispatch] notify];
@@ -54,7 +54,7 @@
 
 - (void)testProtocolDispatchDoesNotCrashWhenAttemptingToPropogateMessageToNonConformer
 {
-    BBCMessageMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMessageMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
+    BBCMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
     BBCMockConformingProtocolTarget* target = [BBCMockConformingProtocolTarget new];
     BBCMockNonConformingProtocolTarget* altTarget = [BBCMockNonConformingProtocolTarget new];
     [sut addTarget:target];
@@ -65,7 +65,7 @@
 
 - (void)testProtocolDispatchDoesNotCrashWhenAddingNonConformingTargetAfterMessageDispatched
 {
-    BBCMessageMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMessageMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
+    BBCMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
     BBCMockNonConformingProtocolTarget* target = [BBCMockNonConformingProtocolTarget new];
     [[sut dispatch] notify];
 
@@ -74,7 +74,7 @@
 
 - (void)testProtocolDispatchInvokesRequiredProtocolMethodOnTarget
 {
-    BBCMessageMultiplexer<id<BBCMockTargetProtocolWithRequiredMethod> >* sut = [[BBCMessageMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocolWithRequiredMethod)];
+    BBCMultiplexer<id<BBCMockTargetProtocolWithRequiredMethod> >* sut = [[BBCMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocolWithRequiredMethod)];
     BBCMockTargetProtocolWithRequiredMethodImpl* target = [BBCMockTargetProtocolWithRequiredMethodImpl new];
     [sut addTarget:target];
     [[sut dispatch] performRequiredMethod];
@@ -84,7 +84,7 @@
 
 - (void)testRemovingTargetThenDispatchingMessageDoesNotPropogateMessageToRemovedTarget
 {
-    BBCMessageMultiplexer<BBCMockZeroArgumentsTarget*>* sut = [[BBCMessageMultiplexer alloc] initWithTargetClass:[BBCMockZeroArgumentsTarget class]];
+    BBCMultiplexer<BBCMockZeroArgumentsTarget*>* sut = [[BBCMultiplexer alloc] initWithTargetClass:[BBCMockZeroArgumentsTarget class]];
     BBCMockZeroArgumentsTarget* target = [BBCMockZeroArgumentsTarget new];
     [sut addTarget:target];
     [sut removeTarget:target];
@@ -95,7 +95,7 @@
 
 - (void)testPerformanceWhenDispatchingMessageWithClassTargets
 {
-    BBCMessageMultiplexer<BBCMockZeroArgumentsTarget*>* sut = [[BBCMessageMultiplexer alloc] initWithTargetClass:[BBCMockZeroArgumentsTarget class]];
+    BBCMultiplexer<BBCMockZeroArgumentsTarget*>* sut = [[BBCMultiplexer alloc] initWithTargetClass:[BBCMockZeroArgumentsTarget class]];
     [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockZeroArgumentsTarget class]];
 
     [self measureBlock:^{
@@ -105,7 +105,7 @@
 
 - (void)testPerformanceWhenDistachingMessageWithProtocolTargetsWhereTargetsImplementsRequiredMethod
 {
-    BBCMessageMultiplexer<id<BBCMockTargetProtocolWithRequiredMethod> >* sut = [[BBCMessageMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocolWithRequiredMethod)];
+    BBCMultiplexer<id<BBCMockTargetProtocolWithRequiredMethod> >* sut = [[BBCMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocolWithRequiredMethod)];
     [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockTargetProtocolWithRequiredMethodImpl class]];
 
     [self measureBlock:^{
@@ -115,7 +115,7 @@
 
 - (void)testPerformanceWhenDisatchingMesssageWithProtocolTargetsWhereTargetsDoNotImplementOptionalMethod
 {
-    BBCMessageMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMessageMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
+    BBCMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
     [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockNonConformingProtocolTarget class]];
 
     [self measureBlock:^{
@@ -125,7 +125,7 @@
 
 - (void)testPerformanceWhenDispatchingMessageWithProtocolTargetsWhereTargetImplementsOptionalMethod
 {
-    BBCMessageMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMessageMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
+    BBCMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
     [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockConformingProtocolTarget class]];
 
     [self measureBlock:^{
@@ -133,7 +133,7 @@
     }];
 }
 
-- (void)prepareMultiplexer:(BBCMessageMultiplexer*)multiplexer forPerformanceTestWithConcreteTargetClass:(Class)targetClass
+- (void)prepareMultiplexer:(BBCMultiplexer*)multiplexer forPerformanceTestWithConcreteTargetClass:(Class)targetClass
 {
     NSUInteger targetsCount = 1E6;
     for (NSUInteger counter = 0; counter < targetsCount; counter++) {

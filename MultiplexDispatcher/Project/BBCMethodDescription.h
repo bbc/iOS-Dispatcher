@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface BBCMethodDescription : NSObject
 
 @property (nonatomic, assign, readonly) SEL selector;
@@ -18,3 +20,5 @@
 - (instancetype)initWithObjCMethodDescription:(struct objc_method_description)methodDescription NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END

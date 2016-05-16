@@ -16,7 +16,11 @@
 
 @end
 
+#pragma mark -
+
 @implementation BBCMultiplexerTargetsCollection
+
+#pragma mark Initialization
 
 - (instancetype)init
 {
@@ -38,6 +42,8 @@
 
     return self;
 }
+
+#pragma mark Public
 
 - (void)addTarget:(id)target
 {

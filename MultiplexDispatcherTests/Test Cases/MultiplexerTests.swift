@@ -1,19 +1,20 @@
 //
-//  MessageMultiplexerTests.swift
+//  MultiplexerTests.swift
 //  MultiplexDispatcher
 //
 //  Created by Thomas Sherwood - TV&Mobile Platforms - Core Engineering on 06/05/2016.
 //  Copyright © 2016 BBC. All rights reserved.
 //
 
+import MultiplexDispatcher
 import XCTest
 
-class MessageMultiplexerTests: XCTestCase {
+class MultiplexerTests: XCTestCase {
     
     // MARK: Tests
     
     func testForwardingMessageForClassType() {
-        var sut = MessageMultiplexer(class: BBCMockZeroArgumentsTarget.self)
+        var sut = Multiplexer(class: BBCMockZeroArgumentsTarget.self)
         let target = BBCMockZeroArgumentsTarget()
         sut.addTarget(target)
         sut.dispatch().zeroArgumentsMessage()
@@ -22,7 +23,7 @@ class MessageMultiplexerTests: XCTestCase {
     }
     
     func testForwardingMessageForProtocolType() {
-        var sut: MessageMultiplexer<BBCMockTargetProtocol> = MessageMultiplexer(protocol: BBCMockTargetProtocol.self)
+        var sut: Multiplexer<BBCMockTargetProtocol> = Multiplexer(protocol: BBCMockTargetProtocol.self)
         let target = BBCMockConformingProtocolTarget()
         sut.addTarget(target)
         sut.dispatch().notify?()
@@ -31,7 +32,7 @@ class MessageMultiplexerTests: XCTestCase {
     }
     
     func testRemovingTargetThenDispatchingMessageDoesNotNotifyTarget() {
-        var sut = MessageMultiplexer(class: BBCMockZeroArgumentsTarget.self)
+        var sut = Multiplexer(class: BBCMockZeroArgumentsTarget.self)
         let target = BBCMockZeroArgumentsTarget()
         sut.addTarget(target)
         sut.removeTarget(target)

@@ -2,7 +2,7 @@
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
-#import "BBCMessageMultiplexer.h"
+#import "BBCMultiplexer.h"
 #import "BBCMockConformingProtocolTarget.h"
 #import "BBCMockNonConformingProtocolTarget.h"
 #import "BBCMockTargetProtocol.h"

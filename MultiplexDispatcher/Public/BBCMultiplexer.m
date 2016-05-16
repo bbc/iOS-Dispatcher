@@ -1,15 +1,15 @@
 //
-//  BBCMessageMultiplexer.m
+//  BBCMultiplexer.m
 //  MultiplexDispatcher
 //
 //  Created by Thomas Sherwood on 03/05/2016.
 //  Copyright © 2016 BBC. All rights reserved.
 //
 
-#import "BBCMessageMultiplexer.h"
+#import "BBCMultiplexer.h"
 #import "BBCMultiplexerProxy.h"
 
-@interface BBCMessageMultiplexer ()
+@interface BBCMultiplexer ()
 
 @property (nonatomic, strong) BBCMultiplexerProxy* proxy;
 
@@ -17,7 +17,7 @@
 
 #pragma mark -
 
-@implementation BBCMessageMultiplexer
+@implementation BBCMultiplexer
 
 #pragma mark Initialization
 

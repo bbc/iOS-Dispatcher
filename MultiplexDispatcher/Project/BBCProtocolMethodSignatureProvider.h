@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BBCProtocolMethodSignatureProvider : NSObject <BBCMethodSignatureProvider>
 
-- (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithProtocol:(Protocol*)protocol NS_DESIGNATED_INITIALIZER;
 
 @end

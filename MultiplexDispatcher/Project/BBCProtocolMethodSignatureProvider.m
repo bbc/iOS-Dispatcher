@@ -22,6 +22,13 @@
 
 @implementation BBCProtocolMethodSignatureProvider
 
+#pragma mark Initialization
+
+- (instancetype)init
+{
+    return [self initWithProtocol:@protocol(NSObject)];
+}
+
 - (instancetype)initWithProtocol:(Protocol*)protocol
 {
     self = [super init];

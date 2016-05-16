@@ -1,5 +1,5 @@
 //
-//  BBCMessageMultiplexer.h
+//  BBCMultiplexer.h
 //  MultiplexDispatcher
 //
 //  Created by Thomas Sherwood on 03/05/2016.
@@ -10,7 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BBCMessageMultiplexer <__covariant Target> : NSObject
+NS_SWIFT_UNAVAILABLE("Use the MultiplexDispatcher.Multiplexer struct instead")
+@interface BBCMultiplexer <__covariant Target> : NSObject
 
 - (instancetype)initWithTargetClass:(Class)targetClass;
 - (instancetype)initWithTargetProtocol:(Protocol*)targetProtocol;
