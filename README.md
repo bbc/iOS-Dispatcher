@@ -21,7 +21,7 @@ BBCSomeConcreteObserver* target = ...
 
 **Swift**
 ```swift
-var multiplexer: MessageMultiplexer<BBCMockTargetProtocol> = MessageMultiplexer(protocol: BBCSomeObserver.self)
+var multiplexer: MessageMultiplexer<BBCSomeObserver> = MessageMultiplexer(protocol: BBCSomeObserver.self)
 let target: BBCSomeConcreteObserver = ...
 sut.addTarget(target)
 sut.dispatch().notify()
