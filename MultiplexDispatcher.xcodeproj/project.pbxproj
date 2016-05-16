@@ -25,6 +25,8 @@
 		4B888CDC1CE9FA2900656557 /* MultiplexDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CCB1CE9FA2900656557 /* MultiplexDispatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B888CDD1CE9FA2900656557 /* Multiplexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B888CCC1CE9FA2900656557 /* Multiplexer.swift */; };
 		4B888CDE1CE9FA7600656557 /* MultiplexDispatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B888CA01CE9F0DA00656557 /* MultiplexDispatcher.framework */; };
+		4B888CE01CE9FB9400656557 /* MultiplexDispatcher.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 4B888CDF1CE9FB9400656557 /* MultiplexDispatcher.podspec */; };
+		4B888CE21CE9FCAE00656557 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4B888CE11CE9FCAE00656557 /* LICENSE */; };
 		4BA4ABC51CDC845A00D128B9 /* MultiplexerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4ABC41CDC845A00D128B9 /* MultiplexerTests.swift */; };
 		6E5C62671CD93FA8003CC4CD /* BBCMockConformingProtocolTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C62661CD93FA8003CC4CD /* BBCMockConformingProtocolTarget.m */; };
 		6E5C626A1CD93FFB003CC4CD /* BBCMockNonConformingProtocolTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C62691CD93FFB003CC4CD /* BBCMockNonConformingProtocolTarget.m */; };
@@ -52,7 +54,9 @@
 		4B888CC91CE9FA2900656557 /* BBCMultiplexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCMultiplexer.h; sourceTree = "<group>"; };
 		4B888CCA1CE9FA2900656557 /* BBCMultiplexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCMultiplexer.m; sourceTree = "<group>"; };
 		4B888CCB1CE9FA2900656557 /* MultiplexDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplexDispatcher.h; sourceTree = "<group>"; };
-		4B888CCC1CE9FA2900656557 /* Multiplexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Multiplexer.swift; sourceTree = "<group>"; };
+		4B888CCC1CE9FA2900656557 /* Multiplexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Multiplexer.swift; path = Swift/Multiplexer.swift; sourceTree = "<group>"; };
+		4B888CDF1CE9FB9400656557 /* MultiplexDispatcher.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; name = MultiplexDispatcher.podspec; path = ../MultiplexDispatcher.podspec; sourceTree = "<group>"; };
+		4B888CE11CE9FCAE00656557 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		4BA4ABC41CDC845A00D128B9 /* MultiplexerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultiplexerTests.swift; path = "Test Cases/MultiplexerTests.swift"; sourceTree = "<group>"; };
 		4BA4ABC61CDC849800D128B9 /* MultiplexDispatcherTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MultiplexDispatcherTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		6E5C62641CD93F7A003CC4CD /* BBCMockTargetProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCMockTargetProtocol.h; path = "Test Mocks/BBCMockTargetProtocol.h"; sourceTree = "<group>"; };
@@ -112,13 +116,20 @@
 			isa = PBXGroup;
 			children = (
 				4B888CCB1CE9FA2900656557 /* MultiplexDispatcher.h */,
-				4B888CCC1CE9FA2900656557 /* Multiplexer.swift */,
 				4B888CC91CE9FA2900656557 /* BBCMultiplexer.h */,
 				4B888CCA1CE9FA2900656557 /* BBCMultiplexer.m */,
 				4B888CC21CE9FA2900656557 /* BBCMultiplexerProxy.h */,
 				4B888CC31CE9FA2900656557 /* BBCMultiplexerProxy.m */,
 			);
 			path = Public;
+			sourceTree = "<group>";
+		};
+		4B888D111CEA17AA00656557 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				4B888CCC1CE9FA2900656557 /* Multiplexer.swift */,
+			);
+			name = Swift;
 			sourceTree = "<group>";
 		};
 		6E99B32C1CD9235000C6C5CF = {
@@ -143,6 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				4B888CA41CE9F0DA00656557 /* Info.plist */,
+				4B888CDF1CE9FB9400656557 /* MultiplexDispatcher.podspec */,
+				4B888CE11CE9FCAE00656557 /* LICENSE */,
+				4B888D111CEA17AA00656557 /* Swift */,
 				4B888CC81CE9FA2900656557 /* Public */,
 				4B888CBA1CE9FA2900656557 /* Project */,
 			);
@@ -284,6 +298,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B888CE21CE9FCAE00656557 /* LICENSE in Resources */,
+				4B888CE01CE9FB9400656557 /* MultiplexDispatcher.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
