@@ -12,11 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BBCMultiplexerTargetsCollection : NSObject
 
-- (instancetype)initWithTargetSelectors:(NSArray<NSString *> *)selectors NS_DESIGNATED_INITIALIZER;
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithSelectorsBuffer:(void* __nonnull * __nonnull)buf bufferSize:(NSUInteger)size NS_DESIGNATED_INITIALIZER;
 
 - (void)addTarget:(id)target;
 - (void)removeTarget:(id)target;
-- (NSArray *)targetsRespondingToSelector:(SEL)aSelector;
+- (NSArray*)targetsRespondingToSelector:(SEL)aSelector;
 
 @end
 

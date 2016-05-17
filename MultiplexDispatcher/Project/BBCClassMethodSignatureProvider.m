@@ -12,7 +12,7 @@
 @interface BBCClassMethodSignatureProvider ()
 
 @property (nonatomic, strong) Class targetClass;
-@property (nonatomic, strong) NSMutableArray<NSString*>* allSelectors;
+@property (nonatomic, strong) NSMutableArray<NSValue*>* allSelectors;
 
 @end
 
@@ -37,7 +37,7 @@
     return self;
 }
 
-- (NSArray<NSString*>*)selectors
+- (NSArray<NSValue*>*)selectors
 {
     return _allSelectors;
 }
@@ -54,7 +54,7 @@
 
     for (unsigned int index = 0; index < count; index++) {
         Method method = methods[index];
-        NSString* selector = NSStringFromSelector(method_getName(method));
+        NSValue* selector = [NSValue valueWithPointer:method_getName(method)];
         [_allSelectors addObject:selector];
     }
 

@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) Protocol* targetProtocol;
 @property (nonatomic, strong) NSMutableSet<BBCMethodDescription*>* methodDescriptions;
-@property (nonatomic, strong) NSMutableSet<NSString*>* allCachedSelectors;
+@property (nonatomic, strong) NSMutableSet<NSValue*>* allCachedSelectors;
 
 @end
 
@@ -43,7 +43,7 @@
     return self;
 }
 
-- (NSArray<NSString*>*)selectors
+- (NSArray<NSValue*>*)selectors
 {
     return _allCachedSelectors.allObjects;
 }
@@ -98,7 +98,7 @@
         struct objc_method_description methodDescription = methods[index];
         BBCMethodDescription* description = [[BBCMethodDescription alloc] initWithObjCMethodDescription:methodDescription];
         [methodDescriptions addObject:description];
-        [_allCachedSelectors addObject:NSStringFromSelector(description.selector)];
+        [_allCachedSelectors addObject:[NSValue valueWithPointer:description.selector]];
     }
 
     free(methods);

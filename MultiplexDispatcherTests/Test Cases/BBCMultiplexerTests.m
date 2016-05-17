@@ -115,11 +115,13 @@
 
 - (void)testPerformanceWhenDisatchingMesssageWithProtocolTargetsWhereTargetsDoNotImplementOptionalMethod
 {
-    BBCMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
-    [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockNonConformingProtocolTarget class]];
-
-    [self measureBlock:^{
+    [self measureMetrics:[[self class] defaultPerformanceMetrics] automaticallyStartMeasuring:NO forBlock:^{
+        BBCMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
+        [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockNonConformingProtocolTarget class]];
+        
+        [self startMeasuring];
         [[sut dispatch] notify];
+        [self stopMeasuring];
     }];
 }
 

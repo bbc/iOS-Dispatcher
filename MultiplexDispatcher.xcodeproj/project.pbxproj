@@ -108,8 +108,7 @@
 				4B888CC61CE9FA2900656557 /* BBCProtocolMethodSignatureProvider.h */,
 				4B888CC71CE9FA2900656557 /* BBCProtocolMethodSignatureProvider.m */,
 			);
-			name = Project;
-			path = Internal;
+			path = Project;
 			sourceTree = "<group>";
 		};
 		4B888CC81CE9FA2900656557 /* Public */ = {
@@ -514,6 +513,7 @@
 				4B888CA71CE9F0DA00656557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E99B3301CD9235000C6C5CF /* Build configuration list for PBXProject "MultiplexDispatcher" */ = {
 			isa = XCConfigurationList;

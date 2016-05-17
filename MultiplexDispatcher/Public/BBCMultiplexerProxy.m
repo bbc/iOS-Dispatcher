@@ -60,7 +60,16 @@
 - (instancetype)initWithMethodSignatureProvider:(id<BBCMethodSignatureProvider>)methodSignatureProvider
 {
     _methodSignatureProvider = [[BBCCachingMethodSignatureProvider alloc] initWithMethodSignatureProvider:methodSignatureProvider];
-    _targets = [[BBCMultiplexerTargetsCollection alloc] initWithTargetSelectors:methodSignatureProvider.selectors];
+
+    NSArray<NSValue*>* selectors = _methodSignatureProvider.selectors;
+    NSUInteger size = selectors.count;
+    void** buffer = malloc(sizeof(SEL) * size);
+    for (NSUInteger index = 0; index < size; index++) {
+        void* selectorPointer = selectors[index].pointerValue;
+        buffer[index] = selectorPointer;
+    }
+
+    _targets = [[BBCMultiplexerTargetsCollection alloc] initWithSelectorsBuffer:buffer bufferSize:size];
 
     return self;
 }

@@ -27,7 +27,7 @@
     return self;
 }
 
-- (NSArray<NSString*>*)selectors
+- (NSArray<NSValue*>*)selectors
 {
     return _provider.selectors;
 }
