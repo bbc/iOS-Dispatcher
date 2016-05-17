@@ -13,16 +13,27 @@ public struct Multiplexer<Target: NSObjectProtocol> {
     // MARK: Properties
     
     private let proxy: BBCMultiplexerProxy
+    private let target: Target
     
     
     // MARK: Initialization
     
     public init(class aClass: Target.Type) {
-        proxy = BBCMultiplexerProxy(targetClass: aClass)
+        self.init(proxy: BBCMultiplexerProxy(targetClass: aClass))
     }
     
     public init(protocol aProtocol: Protocol) {
-        proxy = BBCMultiplexerProxy(targetProtocol: aProtocol)
+        self.init(proxy: BBCMultiplexerProxy(targetProtocol: aProtocol))
+    }
+    
+    init(proxy: BBCMultiplexerProxy) {
+        self.proxy = proxy
+        
+        guard let target = proxy as? Target else {
+            fatalError("Proxy class not configured to mimic \(Target.self)")
+        }
+        
+        self.target = target
     }
     
     
@@ -37,10 +48,6 @@ public struct Multiplexer<Target: NSObjectProtocol> {
     }
     
     public nonmutating func dispatch() -> Target {
-        guard let target = proxy as? Target else {
-            fatalError("Proxy class not configured to mimic \(Target.self)")
-        }
-        
         return target
     }
 
