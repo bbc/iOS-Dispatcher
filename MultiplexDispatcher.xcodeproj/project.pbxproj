@@ -33,6 +33,8 @@
 		6E5C62721CD94F18003CC4CD /* BBCMockTargetProtocolWithRequiredMethodImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C62711CD94F18003CC4CD /* BBCMockTargetProtocolWithRequiredMethodImpl.m */; };
 		6E99B34C1CD926A700C6C5CF /* BBCMultiplexerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E99B34B1CD926A700C6C5CF /* BBCMultiplexerTests.m */; };
 		6E99B3511CD9284200C6C5CF /* BBCMockZeroArgumentsTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E99B3501CD9284200C6C5CF /* BBCMockZeroArgumentsTarget.m */; };
+		7824A75C1CEB933C0004D96C /* BBCSelectorMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 7824A75A1CEB933C0004D96C /* BBCSelectorMap.h */; };
+		7824A75D1CEB933C0004D96C /* BBCSelectorMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7824A75B1CEB933C0004D96C /* BBCSelectorMap.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		6E99B34B1CD926A700C6C5CF /* BBCMultiplexerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCMultiplexerTests.m; path = "Test Cases/BBCMultiplexerTests.m"; sourceTree = "<group>"; };
 		6E99B34F1CD9284200C6C5CF /* BBCMockZeroArgumentsTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCMockZeroArgumentsTarget.h; path = "Test Mocks/BBCMockZeroArgumentsTarget.h"; sourceTree = "<group>"; };
 		6E99B3501CD9284200C6C5CF /* BBCMockZeroArgumentsTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCMockZeroArgumentsTarget.m; path = "Test Mocks/BBCMockZeroArgumentsTarget.m"; sourceTree = "<group>"; };
+		7824A75A1CEB933C0004D96C /* BBCSelectorMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCSelectorMap.h; sourceTree = "<group>"; };
+		7824A75B1CEB933C0004D96C /* BBCSelectorMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCSelectorMap.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 				4B888CC51CE9FA2900656557 /* BBCMultiplexerTargetsCollection.m */,
 				4B888CC61CE9FA2900656557 /* BBCProtocolMethodSignatureProvider.h */,
 				4B888CC71CE9FA2900656557 /* BBCProtocolMethodSignatureProvider.m */,
+				7824A75A1CEB933C0004D96C /* BBCSelectorMap.h */,
+				7824A75B1CEB933C0004D96C /* BBCSelectorMap.m */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -214,6 +220,7 @@
 				4B888CD11CE9FA2900656557 /* BBCMethodDescription.h in Headers */,
 				4B888CD41CE9FA2900656557 /* BBCMultiplexerProxy.h in Headers */,
 				4B888CCD1CE9FA2900656557 /* BBCCachingMethodSignatureProvider.h in Headers */,
+				7824A75C1CEB933C0004D96C /* BBCSelectorMap.h in Headers */,
 				4B888CD31CE9FA2900656557 /* BBCMethodSignatureProvider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +329,7 @@
 				4B888CD01CE9FA2900656557 /* BBCClassMethodSignatureProvider.m in Sources */,
 				4B888CD91CE9FA2900656557 /* BBCProtocolMethodSignatureProvider.m in Sources */,
 				4B888CDB1CE9FA2900656557 /* BBCMultiplexer.m in Sources */,
+				7824A75D1CEB933C0004D96C /* BBCSelectorMap.m in Sources */,
 				4B888CD21CE9FA2900656557 /* BBCMethodDescription.m in Sources */,
 				4B888CDD1CE9FA2900656557 /* Multiplexer.swift in Sources */,
 			);
