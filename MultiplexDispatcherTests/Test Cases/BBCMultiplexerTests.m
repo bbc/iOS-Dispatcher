@@ -6,11 +6,11 @@
 //  Copyright © 2016 BBC. All rights reserved.
 //
 
-#import "BBCMultiplexer.h"
 #import "BBCMockConformingProtocolTarget.h"
 #import "BBCMockNonConformingProtocolTarget.h"
 #import "BBCMockTargetProtocolWithRequiredMethodImpl.h"
 #import "BBCMockZeroArgumentsTarget.h"
+#import "BBCMultiplexer.h"
 #import <XCTest/XCTest.h>
 
 @interface BBCMultiplexerTests : XCTestCase
@@ -95,30 +95,34 @@
 
 - (void)testPerformanceWhenDispatchingMessageWithClassTargets
 {
-    BBCMultiplexer<BBCMockZeroArgumentsTarget*>* sut = [[BBCMultiplexer alloc] initWithTargetClass:[BBCMockZeroArgumentsTarget class]];
-    [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockZeroArgumentsTarget class]];
+    [self measureMetrics:[[self class] defaultPerformanceMetrics] automaticallyStartMeasuring:NO forBlock:^{
+        BBCMultiplexer<BBCMockZeroArgumentsTarget*>* sut = [[BBCMultiplexer alloc] initWithTargetClass:[BBCMockZeroArgumentsTarget class]];
+        [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockZeroArgumentsTarget class]];
 
-    [self measureBlock:^{
+        [self startMeasuring];
         [[sut dispatch] zeroArgumentsMessage];
+        [self stopMeasuring];
     }];
 }
 
 - (void)testPerformanceWhenDistachingMessageWithProtocolTargetsWhereTargetsImplementsRequiredMethod
 {
-    BBCMultiplexer<id<BBCMockTargetProtocolWithRequiredMethod> >* sut = [[BBCMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocolWithRequiredMethod)];
-    [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockTargetProtocolWithRequiredMethodImpl class]];
+    [self measureMetrics:[[self class] defaultPerformanceMetrics] automaticallyStartMeasuring:NO forBlock:^{
+        BBCMultiplexer<id<BBCMockTargetProtocolWithRequiredMethod> >* sut = [[BBCMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocolWithRequiredMethod)];
+        [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockTargetProtocolWithRequiredMethodImpl class]];
 
-    [self measureBlock:^{
+        [self startMeasuring];
         [[sut dispatch] performRequiredMethod];
+        [self stopMeasuring];
     }];
 }
 
-- (void)testPerformanceWhenDisatchingMesssageWithProtocolTargetsWhereTargetsDoNotImplementOptionalMethod
+- (void)testPerformanceWhenDispatchingMessageWithProtocolTargetsWhereTargetsDoNotImplementOptionalMethod
 {
     [self measureMetrics:[[self class] defaultPerformanceMetrics] automaticallyStartMeasuring:NO forBlock:^{
         BBCMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
         [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockNonConformingProtocolTarget class]];
-        
+
         [self startMeasuring];
         [[sut dispatch] notify];
         [self stopMeasuring];
@@ -127,17 +131,19 @@
 
 - (void)testPerformanceWhenDispatchingMessageWithProtocolTargetsWhereTargetImplementsOptionalMethod
 {
-    BBCMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
-    [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockConformingProtocolTarget class]];
+    [self measureMetrics:[[self class] defaultPerformanceMetrics] automaticallyStartMeasuring:NO forBlock:^{
+        BBCMultiplexer<id<BBCMockTargetProtocol> >* sut = [[BBCMultiplexer alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocol)];
+        [self prepareMultiplexer:sut forPerformanceTestWithConcreteTargetClass:[BBCMockConformingProtocolTarget class]];
 
-    [self measureBlock:^{
+        [self startMeasuring];
         [[sut dispatch] notify];
+        [self stopMeasuring];
     }];
 }
 
 - (void)prepareMultiplexer:(BBCMultiplexer*)multiplexer forPerformanceTestWithConcreteTargetClass:(Class)targetClass
 {
-    NSUInteger targetsCount = 1E6;
+    NSUInteger targetsCount = 1E5;
     for (NSUInteger counter = 0; counter < targetsCount; counter++) {
         id target = [targetClass new];
         [multiplexer addTarget:target];
