@@ -1,4 +1,4 @@
-# iOS Multiplex Dispatcher
+# iOS Dispatcher
 Message multiplexing component that aids in reducing boilerplate when implementing the observer pattern within your iOS application by:
 
 - Transparently maintaining an aggregation of observers
@@ -13,18 +13,18 @@ Assuming `BBCSomeObserver` is a protocol with a zero-arguments `notify` method, 
 **Objective-C**
 
 ```objc
-BBCMessageMultiplexer* multiplexer = [[BBCMessageMultiplexer alloc] initWithTargetProtocol:@protocol(BBCSomeObserver)];
+BBCDispatcher* dispatcher = [[BBCDispatcher alloc] initWithTargetProtocol:@protocol(BBCSomeObserver)];
 BBCSomeConcreteObserver* target = ...
-[multiplexer addTarget:target];
-[[multiplexer dispatch] notify];
+[dispatcher addTarget:target];
+[[dispatcher dispatch] notify];
 ```
 
 **Swift**
 ```swift
-var multiplexer: MessageMultiplexer<BBCSomeObserver> = MessageMultiplexer(protocol: BBCSomeObserver.self)
+var dispatcher: Dispatcher<BBCSomeObserver> = Dispatcher(protocol: BBCSomeObserver.self)
 let target: BBCSomeConcreteObserver = ...
-sut.addTarget(target)
-sut.dispatch().notify()
+dispatcher.addTarget(target)
+dispatcher.dispatch().notify()
 ```
 
 You can also dispatch messages that accept arguments - just declare them in your class or protocol and invoke them as you would normally.
