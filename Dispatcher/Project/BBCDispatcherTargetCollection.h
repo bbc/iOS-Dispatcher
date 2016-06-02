@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BBCDispatcherTargetCollection : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithSelectorsBuffer:(void* __nonnull * __nonnull)buf bufferSize:(NSUInteger)size NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithSelectors:(NSArray<NSValue *> *)selectors NS_DESIGNATED_INITIALIZER;
 
 - (void)addTarget:(id)target;
 - (void)removeTarget:(id)target;
