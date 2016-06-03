@@ -9,6 +9,7 @@
 #import "BBCCachingMethodSignatureProvider.h"
 #import "BBCClassMethodSignatureProvider.h"
 #import "BBCDispatcherProxy.h"
+#import "BBCDispatcherReplayLastInvocationAction.h"
 #import "BBCDispatcherTargetCollection.h"
 #import "BBCProtocolMethodSignatureProvider.h"
 #import <objc/runtime.h>
@@ -19,13 +20,22 @@
 @property (nonatomic, strong) Class targetClass;
 @property (nonatomic, strong) Protocol* targetProtocol;
 @property (nonatomic, strong) BBCDispatcherTargetCollection* targets;
-@property (nonatomic, strong) NSInvocation* lastInvocation;
 
 @end
 
 @implementation BBCDispatcherProxy
 
 #pragma mark Initialization
+
++ (instancetype)proxyForClass:(Class)aClass
+{
+    return [[self alloc] initWithTargetClass:aClass];
+}
+
++ (instancetype)proxyForProtocol:(Protocol *)aProtocol
+{
+    return [[self alloc] initWithTargetProtocol:aProtocol];
+}
 
 - (instancetype)init
 {
@@ -52,6 +62,8 @@
 
     NSArray<NSValue*>* selectors = _methodSignatureProvider.selectors;
     _targets = [[BBCDispatcherTargetCollection alloc] initWithSelectors:selectors];
+    
+    _replayAction = [BBCDispatcherReplayLastInvocationAction new];
 
     return self;
 }
@@ -61,10 +73,7 @@
 - (void)addTarget:(id)target
 {
     [_targets addTarget:target];
-
-    if (_lastInvocation && [target respondsToSelector:_lastInvocation.selector]) {
-        [_lastInvocation invokeWithTarget:target];
-    }
+    [_replayAction replayWithTarget:target];
 }
 
 - (void)removeTarget:(id)target
@@ -73,6 +82,11 @@
 }
 
 #pragma mark Overrides
+
+- (void)setReplayAction:(BBCDispatcherReplayAction *)replayAction
+{
+    _replayAction = replayAction ?: [BBCDispatcherReplayLastInvocationAction new];
+}
 
 - (BOOL)isKindOfClass:(Class)aClass
 {
@@ -91,7 +105,7 @@
 
 - (void)forwardInvocation:(NSInvocation*)invocation
 {
-    _lastInvocation = invocation;
+    [_replayAction trackInvocation:invocation];
 
     for (id target in [_targets targetsRespondingToSelector:invocation.selector]) {
         [invocation invokeWithTarget:target];

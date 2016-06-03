@@ -13,7 +13,7 @@
 
 @interface BBCDispatcherTargetCollection ()
 
-@property (nonatomic, strong) NSArray<NSValue *> *selectors;
+@property (nonatomic, strong) NSArray<NSValue*>* selectors;
 @property (nonatomic, strong) BBCSelectorMap<NSMutableArray*>* storage;
 
 @end
@@ -24,14 +24,14 @@
 
 #pragma mark Initialization
 
-- (instancetype)initWithSelectors:(NSArray<NSValue *> *)selectors
+- (instancetype)initWithSelectors:(NSArray<NSValue*>*)selectors
 {
     self = [super init];
     if (self) {
         _selectors = selectors;
         _storage = [BBCSelectorMap map];
 
-        for (NSValue *selector in selectors) {
+        for (NSValue* selector in selectors) {
             [_storage setObject:[NSMutableArray new] forSelector:selector.pointerValue];
         }
     }
@@ -43,16 +43,17 @@
 
 - (void)addTarget:(id)target
 {
-    for (NSValue *selector in _selectors) {
+    for (NSValue* selector in _selectors) {
         if ([target respondsToSelector:selector.pointerValue]) {
-            [[_storage objectForSelector:selector.pointerValue] addObject:target];
+            NSMutableArray* targets = [_storage objectForSelector:selector.pointerValue];
+            [targets addObject:target];
         }
     }
 }
 
 - (void)removeTarget:(id)target
 {
-    for (NSValue *selector in _selectors) {
+    for (NSValue* selector in _selectors) {
         [[_storage objectForSelector:selector.pointerValue] removeObject:target];
     }
 }

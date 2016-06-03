@@ -97,6 +97,33 @@
 		4B888CDD1CE9FA2900656557 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B888CCC1CE9FA2900656557 /* Dispatcher.swift */; };
 		4B888CDE1CE9FA7600656557 /* Dispatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B888CA01CE9F0DA00656557 /* Dispatcher.framework */; };
 		4BA4ABC51CDC845A00D128B9 /* DispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4ABC41CDC845A00D128B9 /* DispatcherTests.swift */; };
+		4BD326E61D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BD326E71D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BD326E81D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BD326E91D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BD326EA1D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326E51D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m */; };
+		4BD326EB1D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326E51D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m */; };
+		4BD326EC1D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326E51D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m */; };
+		4BD326ED1D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326E51D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m */; };
+		4BD326F01D01B3DC00A05F66 /* BBCDispatcherReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BD326F11D01B3DC00A05F66 /* BBCDispatcherReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BD326F21D01B3DC00A05F66 /* BBCDispatcherReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BD326F31D01B3DC00A05F66 /* BBCDispatcherReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BD326F41D01B3DC00A05F66 /* BBCDispatcherReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326EF1D01B3DC00A05F66 /* BBCDispatcherReplayAction.m */; };
+		4BD326F51D01B3DC00A05F66 /* BBCDispatcherReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326EF1D01B3DC00A05F66 /* BBCDispatcherReplayAction.m */; };
+		4BD326F61D01B3DC00A05F66 /* BBCDispatcherReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326EF1D01B3DC00A05F66 /* BBCDispatcherReplayAction.m */; };
+		4BD326F71D01B3DC00A05F66 /* BBCDispatcherReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326EF1D01B3DC00A05F66 /* BBCDispatcherReplayAction.m */; };
+		4BD326FA1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BD326FB1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BD326FC1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BD326FD1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BD326FE1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326F91D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m */; };
+		4BD326FF1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326F91D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m */; };
+		4BD327001D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326F91D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m */; };
+		4BD327011D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326F91D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m */; };
+		4BD327031D01B6D400A05F66 /* BBCDispatcherProxyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD327021D01B6D400A05F66 /* BBCDispatcherProxyTests.m */; };
+		4BD327041D01B6D400A05F66 /* BBCDispatcherProxyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD327021D01B6D400A05F66 /* BBCDispatcherProxyTests.m */; };
+		4BD327051D01B6D400A05F66 /* BBCDispatcherProxyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD327021D01B6D400A05F66 /* BBCDispatcherProxyTests.m */; };
 		6E5C62671CD93FA8003CC4CD /* BBCMockConformingProtocolTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C62661CD93FA8003CC4CD /* BBCMockConformingProtocolTarget.m */; };
 		6E5C626A1CD93FFB003CC4CD /* BBCMockNonConformingProtocolTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C62691CD93FFB003CC4CD /* BBCMockNonConformingProtocolTarget.m */; };
 		6E5C62721CD94F18003CC4CD /* BBCMockTargetProtocolWithRequiredMethodImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C62711CD94F18003CC4CD /* BBCMockTargetProtocolWithRequiredMethodImpl.m */; };
@@ -157,6 +184,13 @@
 		4B888CE11CE9FCAE00656557 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		4BA4ABC41CDC845A00D128B9 /* DispatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DispatcherTests.swift; path = "Test Cases/DispatcherTests.swift"; sourceTree = "<group>"; };
 		4BA4ABC61CDC849800D128B9 /* DispatcherTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DispatcherTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCDispatcherBlockReplayAction.h; sourceTree = "<group>"; };
+		4BD326E51D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCDispatcherBlockReplayAction.m; sourceTree = "<group>"; };
+		4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCDispatcherReplayAction.h; sourceTree = "<group>"; };
+		4BD326EF1D01B3DC00A05F66 /* BBCDispatcherReplayAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCDispatcherReplayAction.m; sourceTree = "<group>"; };
+		4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCDispatcherReplayLastInvocationAction.h; sourceTree = "<group>"; };
+		4BD326F91D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCDispatcherReplayLastInvocationAction.m; sourceTree = "<group>"; };
+		4BD327021D01B6D400A05F66 /* BBCDispatcherProxyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCDispatcherProxyTests.m; path = "Test Cases/BBCDispatcherProxyTests.m"; sourceTree = "<group>"; };
 		6E5C62641CD93F7A003CC4CD /* BBCMockTargetProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCMockTargetProtocol.h; path = "Test Mocks/BBCMockTargetProtocol.h"; sourceTree = "<group>"; };
 		6E5C62651CD93FA8003CC4CD /* BBCMockConformingProtocolTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCMockConformingProtocolTarget.h; path = "Test Mocks/BBCMockConformingProtocolTarget.h"; sourceTree = "<group>"; };
 		6E5C62661CD93FA8003CC4CD /* BBCMockConformingProtocolTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCMockConformingProtocolTarget.m; path = "Test Mocks/BBCMockConformingProtocolTarget.m"; sourceTree = "<group>"; };
@@ -258,6 +292,12 @@
 				4B888CCA1CE9FA2900656557 /* BBCDispatcher.m */,
 				4B888CC21CE9FA2900656557 /* BBCDispatcherProxy.h */,
 				4B888CC31CE9FA2900656557 /* BBCDispatcherProxy.m */,
+				4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */,
+				4BD326EF1D01B3DC00A05F66 /* BBCDispatcherReplayAction.m */,
+				4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */,
+				4BD326F91D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m */,
+				4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */,
+				4BD326E51D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -326,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				6E99B34B1CD926A700C6C5CF /* BBCDispatcherTests.m */,
+				4BD327021D01B6D400A05F66 /* BBCDispatcherProxyTests.m */,
 				4BA4ABC41CDC845A00D128B9 /* DispatcherTests.swift */,
 			);
 			name = "Test Cases";
@@ -355,7 +396,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD326E71D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h in Headers */,
 				4B3DB9DA1CEC636F006FDC7E /* BBCProtocolMethodSignatureProvider.h in Headers */,
+				4BD326F11D01B3DC00A05F66 /* BBCDispatcherReplayAction.h in Headers */,
 				4B3DB9D71CEC636F006FDC7E /* BBCMethodSignatureProvider.h in Headers */,
 				4B3DB9CC1CEC636F006FDC7E /* Dispatcher.h in Headers */,
 				4B3DB9CF1CEC636F006FDC7E /* BBCDispatcherProxy.h in Headers */,
@@ -364,6 +407,7 @@
 				4B3DB9D51CEC636F006FDC7E /* BBCMethodDescription.h in Headers */,
 				4B3DB9D81CEC636F006FDC7E /* BBCDispatcherTargetCollection.h in Headers */,
 				4B3DB9DC1CEC636F006FDC7E /* BBCSelectorMap.h in Headers */,
+				4BD326FB1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h in Headers */,
 				4B3DB9D11CEC636F006FDC7E /* BBCCachingMethodSignatureProvider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,7 +416,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD326E81D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h in Headers */,
 				4B3DBA0F1CEC8EAA006FDC7E /* BBCProtocolMethodSignatureProvider.h in Headers */,
+				4BD326F21D01B3DC00A05F66 /* BBCDispatcherReplayAction.h in Headers */,
 				4B3DBA0C1CEC8EAA006FDC7E /* BBCMethodSignatureProvider.h in Headers */,
 				4B3DBA011CEC8EAA006FDC7E /* Dispatcher.h in Headers */,
 				4B3DBA041CEC8EAA006FDC7E /* BBCDispatcherProxy.h in Headers */,
@@ -381,6 +427,7 @@
 				4B3DBA0A1CEC8EAA006FDC7E /* BBCMethodDescription.h in Headers */,
 				4B3DBA0D1CEC8EAA006FDC7E /* BBCDispatcherTargetCollection.h in Headers */,
 				4B3DBA111CEC8EAA006FDC7E /* BBCSelectorMap.h in Headers */,
+				4BD326FC1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h in Headers */,
 				4B3DBA061CEC8EAA006FDC7E /* BBCCachingMethodSignatureProvider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,7 +436,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD326E91D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h in Headers */,
 				4B3DBA421CEC9038006FDC7E /* BBCProtocolMethodSignatureProvider.h in Headers */,
+				4BD326F31D01B3DC00A05F66 /* BBCDispatcherReplayAction.h in Headers */,
 				4B3DBA3F1CEC9038006FDC7E /* BBCMethodSignatureProvider.h in Headers */,
 				4B3DBA341CEC9038006FDC7E /* Dispatcher.h in Headers */,
 				4B3DBA371CEC9038006FDC7E /* BBCDispatcherProxy.h in Headers */,
@@ -398,6 +447,7 @@
 				4B3DBA3D1CEC9038006FDC7E /* BBCMethodDescription.h in Headers */,
 				4B3DBA401CEC9038006FDC7E /* BBCDispatcherTargetCollection.h in Headers */,
 				4B3DBA441CEC9038006FDC7E /* BBCSelectorMap.h in Headers */,
+				4BD326FD1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h in Headers */,
 				4B3DBA391CEC9038006FDC7E /* BBCCachingMethodSignatureProvider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,7 +456,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD326E61D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h in Headers */,
 				4B888CDA1CE9FA2900656557 /* BBCDispatcher.h in Headers */,
+				4BD326F01D01B3DC00A05F66 /* BBCDispatcherReplayAction.h in Headers */,
 				4B888CDC1CE9FA2900656557 /* Dispatcher.h in Headers */,
 				4B888CD81CE9FA2900656557 /* BBCProtocolMethodSignatureProvider.h in Headers */,
 				4B888CCF1CE9FA2900656557 /* BBCClassMethodSignatureProvider.h in Headers */,
@@ -415,6 +467,7 @@
 				4B888CD41CE9FA2900656557 /* BBCDispatcherProxy.h in Headers */,
 				4B888CCD1CE9FA2900656557 /* BBCCachingMethodSignatureProvider.h in Headers */,
 				7824A75C1CEB933C0004D96C /* BBCSelectorMap.h in Headers */,
+				4BD326FA1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h in Headers */,
 				4B888CD31CE9FA2900656557 /* BBCMethodSignatureProvider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,11 +713,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD326F51D01B3DC00A05F66 /* BBCDispatcherReplayAction.m in Sources */,
+				4BD326EB1D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m in Sources */,
 				4B3DB9D21CEC636F006FDC7E /* BBCCachingMethodSignatureProvider.m in Sources */,
 				4B3DB9CE1CEC636F006FDC7E /* BBCDispatcher.m in Sources */,
 				4B3DB9D41CEC636F006FDC7E /* BBCClassMethodSignatureProvider.m in Sources */,
 				4B3DB9CB1CEC636F006FDC7E /* Dispatcher.swift in Sources */,
 				4B3DB9D91CEC636F006FDC7E /* BBCDispatcherTargetCollection.m in Sources */,
+				4BD326FF1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m in Sources */,
 				4B3DB9D01CEC636F006FDC7E /* BBCDispatcherProxy.m in Sources */,
 				4B3DB9DD1CEC636F006FDC7E /* BBCSelectorMap.m in Sources */,
 				4B3DB9DB1CEC636F006FDC7E /* BBCProtocolMethodSignatureProvider.m in Sources */,
@@ -682,6 +738,7 @@
 				4B3DB9DE1CEC637F006FDC7E /* BBCDispatcherTests.m in Sources */,
 				4B3DB9E31CEC637F006FDC7E /* BBCMockTargetProtocolWithRequiredMethodImpl.m in Sources */,
 				4B3DB9E01CEC637F006FDC7E /* BBCMockZeroArgumentsTarget.m in Sources */,
+				4BD327041D01B6D400A05F66 /* BBCDispatcherProxyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,11 +746,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD326F61D01B3DC00A05F66 /* BBCDispatcherReplayAction.m in Sources */,
+				4BD326EC1D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m in Sources */,
 				4B3DBA071CEC8EAA006FDC7E /* BBCCachingMethodSignatureProvider.m in Sources */,
 				4B3DBA031CEC8EAA006FDC7E /* BBCDispatcher.m in Sources */,
 				4B3DBA091CEC8EAA006FDC7E /* BBCClassMethodSignatureProvider.m in Sources */,
 				4B3DBA001CEC8EAA006FDC7E /* Dispatcher.swift in Sources */,
 				4B3DBA0E1CEC8EAA006FDC7E /* BBCDispatcherTargetCollection.m in Sources */,
+				4BD327001D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m in Sources */,
 				4B3DBA051CEC8EAA006FDC7E /* BBCDispatcherProxy.m in Sources */,
 				4B3DBA121CEC8EAA006FDC7E /* BBCSelectorMap.m in Sources */,
 				4B3DBA101CEC8EAA006FDC7E /* BBCProtocolMethodSignatureProvider.m in Sources */,
@@ -711,6 +771,7 @@
 				4B3DBA131CEC8EEF006FDC7E /* BBCDispatcherTests.m in Sources */,
 				4B3DBA181CEC8EEF006FDC7E /* BBCMockTargetProtocolWithRequiredMethodImpl.m in Sources */,
 				4B3DBA151CEC8EEF006FDC7E /* BBCMockZeroArgumentsTarget.m in Sources */,
+				4BD327051D01B6D400A05F66 /* BBCDispatcherProxyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,11 +779,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD326F71D01B3DC00A05F66 /* BBCDispatcherReplayAction.m in Sources */,
+				4BD326ED1D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m in Sources */,
 				4B3DBA3A1CEC9038006FDC7E /* BBCCachingMethodSignatureProvider.m in Sources */,
 				4B3DBA361CEC9038006FDC7E /* BBCDispatcher.m in Sources */,
 				4B3DBA3C1CEC9038006FDC7E /* BBCClassMethodSignatureProvider.m in Sources */,
 				4B3DBA331CEC9038006FDC7E /* Dispatcher.swift in Sources */,
 				4B3DBA411CEC9038006FDC7E /* BBCDispatcherTargetCollection.m in Sources */,
+				4BD327011D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m in Sources */,
 				4B3DBA381CEC9038006FDC7E /* BBCDispatcherProxy.m in Sources */,
 				4B3DBA451CEC9038006FDC7E /* BBCSelectorMap.m in Sources */,
 				4B3DBA431CEC9038006FDC7E /* BBCProtocolMethodSignatureProvider.m in Sources */,
@@ -734,11 +798,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD326F41D01B3DC00A05F66 /* BBCDispatcherReplayAction.m in Sources */,
+				4BD326EA1D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m in Sources */,
 				4B888CD51CE9FA2900656557 /* BBCDispatcherProxy.m in Sources */,
 				4B888CCE1CE9FA2900656557 /* BBCCachingMethodSignatureProvider.m in Sources */,
 				4B888CD71CE9FA2900656557 /* BBCDispatcherTargetCollection.m in Sources */,
 				4B888CD01CE9FA2900656557 /* BBCClassMethodSignatureProvider.m in Sources */,
 				4B888CD91CE9FA2900656557 /* BBCProtocolMethodSignatureProvider.m in Sources */,
+				4BD326FE1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m in Sources */,
 				4B888CDB1CE9FA2900656557 /* BBCDispatcher.m in Sources */,
 				7824A75D1CEB933C0004D96C /* BBCSelectorMap.m in Sources */,
 				4B888CD21CE9FA2900656557 /* BBCMethodDescription.m in Sources */,
@@ -756,6 +823,7 @@
 				6E99B3511CD9284200C6C5CF /* BBCMockZeroArgumentsTarget.m in Sources */,
 				6E5C62721CD94F18003CC4CD /* BBCMockTargetProtocolWithRequiredMethodImpl.m in Sources */,
 				4BA4ABC51CDC845A00D128B9 /* DispatcherTests.swift in Sources */,
+				4BD327031D01B6D400A05F66 /* BBCDispatcherProxyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

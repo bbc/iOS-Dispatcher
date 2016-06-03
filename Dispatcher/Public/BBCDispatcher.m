@@ -8,6 +8,7 @@
 
 #import "BBCDispatcher.h"
 #import "BBCDispatcherProxy.h"
+#import "BBCDispatcherReplayLastInvocationAction.h"
 
 @interface BBCDispatcher ()
 
@@ -28,21 +29,32 @@
 
 - (instancetype)initWithTargetClass:(Class)targetClass
 {
-    self = [super init];
-    if (self) {
-        _proxy = [[BBCDispatcherProxy alloc] initWithTargetClass:targetClass];
-    }
+    return [self initWithTargetClass:targetClass replayAction:nil];
+}
 
-    return self;
+- (instancetype)initWithTargetClass:(Class)targetClass replayAction:(BBCDispatcherReplayAction *)action
+{
+    return [self initWithProxy:[BBCDispatcherProxy proxyForClass:targetClass] replayAction:action];
 }
 
 - (instancetype)initWithTargetProtocol:(Protocol*)targetProtocol
 {
-    self = [super init];
-    if (self) {
-        _proxy = [[BBCDispatcherProxy alloc] initWithTargetProtocol:targetProtocol];
-    }
+    return [self initWithTargetProtocol:targetProtocol replayAction:nil];
+}
 
+- (instancetype)initWithTargetProtocol:(Protocol*)targetProtocol replayAction:(nullable BBCDispatcherReplayAction*)action
+{
+    return [self initWithProxy:[BBCDispatcherProxy proxyForProtocol:targetProtocol] replayAction:action];
+}
+
+- (instancetype)initWithProxy:(BBCDispatcherProxy *)proxy replayAction:(BBCDispatcherReplayAction *)action
+{
+    self = [super init];
+    if(self) {
+        _proxy = proxy;
+        _proxy.replayAction = action;
+    }
+    
     return self;
 }
 

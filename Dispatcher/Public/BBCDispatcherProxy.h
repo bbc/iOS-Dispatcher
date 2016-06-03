@@ -10,8 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class BBCDispatcherReplayAction;
+
 @interface BBCDispatcherProxy : NSProxy
 
+@property (nonatomic, strong, null_resettable) BBCDispatcherReplayAction *replayAction;
+
++ (instancetype)proxyForClass:(Class)aClass;
++ (instancetype)proxyForProtocol:(Protocol *)aProtocol;
+
+- (instancetype)init;
 - (instancetype)initWithTargetClass:(Class)aClass;
 - (instancetype)initWithTargetProtocol:(Protocol *)aProtocol;
 

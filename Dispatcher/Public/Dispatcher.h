@@ -7,4 +7,7 @@
 //
 
 #import "BBCDispatcher.h"
+#import "BBCDispatcherBlockReplayAction.h"
+#import "BBCDispatcherBlockReplayAction.h"
 #import "BBCDispatcherProxy.h"
+#import "BBCDispatcherReplayLastInvocationAction.h"

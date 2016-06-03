@@ -10,7 +10,7 @@
 #import "BBCMockNonConformingProtocolTarget.h"
 #import "BBCMockTargetProtocolWithRequiredMethodImpl.h"
 #import "BBCMockZeroArgumentsTarget.h"
-#import "BBCDispatcher.h"
+#import "Dispatcher.h"
 #import <XCTest/XCTest.h>
 
 @interface BBCDispatcherTests : XCTestCase
@@ -40,6 +40,21 @@
     [sut addTarget:target];
 
     XCTAssertTrue(target.receievedMessage);
+}
+
+- (void)testAddingTargetAfterClassDispatchUsingCustomReplayActionInvokesReplayBlockWithTarget
+{
+    __block BBCMockZeroArgumentsTarget* receievedTarget;
+    BBCDispatcherBlockReplayAction* action = [BBCDispatcherBlockReplayAction<BBCMockZeroArgumentsTarget*> replayActionWithBlock:^(BBCMockZeroArgumentsTarget * _Nonnull target, __unused NSInvocation * _Nonnull invocation) {
+        receievedTarget = target;
+    }];
+
+    BBCDispatcher<BBCMockZeroArgumentsTarget*>* sut = [[BBCDispatcher alloc] initWithTargetClass:[BBCMockZeroArgumentsTarget class] replayAction:action];
+    BBCMockZeroArgumentsTarget* target = [BBCMockZeroArgumentsTarget new];
+    [[sut dispatch] zeroArgumentsMessage];
+    [sut addTarget:target];
+
+    XCTAssertEqual(receievedTarget, target);
 }
 
 - (void)testProtocolDispatchPropogatesMessageToOptionalConformer
@@ -80,6 +95,21 @@
     [[sut dispatch] performRequiredMethod];
 
     XCTAssertTrue(target.receievedMessage);
+}
+
+- (void)testAddingTargetAfterProtocolDispatchUsingCustomReplayActionInvokesReplayBlockWithTarget
+{
+    __block id<BBCMockTargetProtocolWithRequiredMethod> receievedTarget;
+    BBCDispatcherBlockReplayAction* action = [BBCDispatcherBlockReplayAction<id<BBCMockTargetProtocolWithRequiredMethod>> replayActionWithBlock:^(id<BBCMockTargetProtocolWithRequiredMethod> _Nonnull target, __unused NSInvocation * _Nonnull invocation) {
+        receievedTarget = target;
+    }];
+    
+    BBCDispatcher<id<BBCMockTargetProtocolWithRequiredMethod>>* sut = [[BBCDispatcher alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocolWithRequiredMethod) replayAction:action];
+    BBCMockTargetProtocolWithRequiredMethodImpl* target = [BBCMockTargetProtocolWithRequiredMethodImpl new];
+    [[sut dispatch] performRequiredMethod];
+    [sut addTarget:target];
+    
+    XCTAssertEqual(receievedTarget, target);
 }
 
 - (void)testRemovingTargetThenDispatchingMessageDoesNotPropogateMessageToRemovedTarget
