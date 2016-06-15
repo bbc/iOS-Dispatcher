@@ -8,3 +8,4 @@
 
 #import "BBCDispatcher.h"
 #import "BBCDispatcherProxy.h"
+#import "BBCSwiftClosureReplayAction.h"

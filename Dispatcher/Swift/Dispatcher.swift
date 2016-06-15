@@ -10,6 +10,9 @@ import Foundation
 
 public struct Dispatcher<Target: NSObjectProtocol> {
     
+    public typealias ReplayBlock = (Target) -> Void
+    
+    
     // MARK: Properties
     
     private let proxy: BBCDispatcherProxy
@@ -18,22 +21,29 @@ public struct Dispatcher<Target: NSObjectProtocol> {
     
     // MARK: Initialization
     
-    public init(class aClass: Target.Type) {
-        self.init(proxy: BBCDispatcherProxy(targetClass: aClass))
+    public init(class aClass: Target.Type, replayBlock: ReplayBlock? = nil) {
+        self.init(proxy: BBCDispatcherProxy(targetClass: aClass), replayBlock: replayBlock)
     }
     
-    public init(protocol aProtocol: Protocol) {
-        self.init(proxy: BBCDispatcherProxy(targetProtocol: aProtocol))
+    public init(protocol aProtocol: Protocol, replayBlock: ReplayBlock? = nil) {
+        self.init(proxy: BBCDispatcherProxy(targetProtocol: aProtocol), replayBlock: replayBlock)
     }
     
-    init(proxy: BBCDispatcherProxy) {
-        self.proxy = proxy
-        
+    init(proxy: BBCDispatcherProxy, replayBlock: ReplayBlock?) {
         guard let target = proxy as? Target else {
             fatalError("Proxy class not configured to mimic \(Target.self)")
         }
         
+        self.proxy = proxy
         self.target = target
+        
+        if let replayBlock = replayBlock {
+            proxy.replayAction = BBCSwiftClosureReplayAction { target in
+                if let target = target as? Target {
+                    replayBlock(target)
+                }
+            }
+        }
     }
     
     

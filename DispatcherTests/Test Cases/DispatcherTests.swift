@@ -41,4 +41,22 @@ class DispatcherTests: XCTestCase {
         XCTAssertFalse(target.receievedMessage)
     }
     
+    func testInitializingDispatcherForClassTargetsWithReplayBlockInvokesBlockWithNewTarget() {
+        var receievedTarget: BBCMockZeroArgumentsTarget!
+        var sut = Dispatcher(class: BBCMockZeroArgumentsTarget.self, replayBlock: { receievedTarget = $0 } )
+        let target = BBCMockZeroArgumentsTarget()
+        sut.addTarget(target)
+        
+        XCTAssertEqual(target, receievedTarget)
+    }
+    
+    func testInitializingDispatcherForProtocolTargetsWithReplayBlockInvokesBlockWithNewTarget() {
+        var receievedTarget: BBCMockTargetProtocol!
+        var sut: Dispatcher<BBCMockTargetProtocol> = Dispatcher(protocol: BBCMockTargetProtocol.self, replayBlock: { receievedTarget = $0 } )
+        let target = BBCMockConformingProtocolTarget()
+        sut.addTarget(target)
+        
+        XCTAssertTrue(target === receievedTarget)
+    }
+    
 }
