@@ -45,11 +45,10 @@
 - (void)testAddingTargetAfterClassDispatchUsingCustomReplayActionInvokesReplayBlockWithTarget
 {
     __block BBCMockZeroArgumentsTarget* receievedTarget;
-    BBCDispatcherBlockReplayAction* action = [BBCDispatcherBlockReplayAction<BBCMockZeroArgumentsTarget*> replayActionWithBlock:^(BBCMockZeroArgumentsTarget * _Nonnull target, __unused NSInvocation * _Nonnull invocation) {
+    BBCDispatcher<BBCMockZeroArgumentsTarget*>* sut = [[BBCDispatcher alloc] initWithTargetClass:[BBCMockZeroArgumentsTarget class] replayBlock:^(BBCMockZeroArgumentsTarget* _Nonnull target, __unused NSInvocation* _Nonnull invocation) {
         receievedTarget = target;
     }];
-
-    BBCDispatcher<BBCMockZeroArgumentsTarget*>* sut = [[BBCDispatcher alloc] initWithTargetClass:[BBCMockZeroArgumentsTarget class] replayAction:action];
+    
     BBCMockZeroArgumentsTarget* target = [BBCMockZeroArgumentsTarget new];
     [[sut dispatch] zeroArgumentsMessage];
     [sut addTarget:target];
@@ -100,15 +99,14 @@
 - (void)testAddingTargetAfterProtocolDispatchUsingCustomReplayActionInvokesReplayBlockWithTarget
 {
     __block id<BBCMockTargetProtocolWithRequiredMethod> receievedTarget;
-    BBCDispatcherBlockReplayAction* action = [BBCDispatcherBlockReplayAction<id<BBCMockTargetProtocolWithRequiredMethod>> replayActionWithBlock:^(id<BBCMockTargetProtocolWithRequiredMethod> _Nonnull target, __unused NSInvocation * _Nonnull invocation) {
+    BBCDispatcher<id<BBCMockTargetProtocolWithRequiredMethod> >* sut = [[BBCDispatcher alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocolWithRequiredMethod) replayBlock:^(id<BBCMockTargetProtocolWithRequiredMethod> _Nonnull target, __unused NSInvocation* _Nonnull invocation) {
         receievedTarget = target;
     }];
     
-    BBCDispatcher<id<BBCMockTargetProtocolWithRequiredMethod>>* sut = [[BBCDispatcher alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocolWithRequiredMethod) replayAction:action];
     BBCMockTargetProtocolWithRequiredMethodImpl* target = [BBCMockTargetProtocolWithRequiredMethodImpl new];
     [[sut dispatch] performRequiredMethod];
     [sut addTarget:target];
-    
+
     XCTAssertEqual(receievedTarget, target);
 }
 

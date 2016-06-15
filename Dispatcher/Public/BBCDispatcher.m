@@ -7,12 +7,18 @@
 //
 
 #import "BBCDispatcher.h"
+#import "BBCDispatcherBlockReplayAction.h"
 #import "BBCDispatcherProxy.h"
 #import "BBCDispatcherReplayLastInvocationAction.h"
 
 @interface BBCDispatcher ()
 
 @property (nonatomic, strong) BBCDispatcherProxy* proxy;
+
+- (instancetype)initWithTargetClass:(Class)targetClass
+                       replayAction:(nullable BBCDispatcherReplayAction<id>*)action;
+- (instancetype)initWithTargetProtocol:(Protocol*)targetProtocol
+                          replayAction:(nullable BBCDispatcherReplayAction<id>*)action;
 
 @end
 
@@ -32,7 +38,7 @@
     return [self initWithTargetClass:targetClass replayAction:nil];
 }
 
-- (instancetype)initWithTargetClass:(Class)targetClass replayAction:(BBCDispatcherReplayAction *)action
+- (instancetype)initWithTargetClass:(Class)targetClass replayAction:(BBCDispatcherReplayAction*)action
 {
     return [self initWithProxy:[BBCDispatcherProxy proxyForClass:targetClass] replayAction:action];
 }
@@ -47,14 +53,14 @@
     return [self initWithProxy:[BBCDispatcherProxy proxyForProtocol:targetProtocol] replayAction:action];
 }
 
-- (instancetype)initWithProxy:(BBCDispatcherProxy *)proxy replayAction:(BBCDispatcherReplayAction *)action
+- (instancetype)initWithProxy:(BBCDispatcherProxy*)proxy replayAction:(BBCDispatcherReplayAction*)action
 {
     self = [super init];
-    if(self) {
+    if (self) {
         _proxy = proxy;
         _proxy.replayAction = action;
     }
-    
+
     return self;
 }
 
@@ -73,6 +79,22 @@
 - (id)dispatch
 {
     return _proxy;
+}
+
+@end
+
+#pragma mark -
+
+@implementation BBCDispatcher (Blocks)
+
+- (instancetype)initWithTargetClass:(Class)targetClass replayBlock:(void (^)(id target, NSInvocation* invocation))block
+{
+    return [self initWithTargetClass:targetClass replayAction:[BBCDispatcherBlockReplayAction replayActionWithBlock:block]];
+}
+
+- (instancetype)initWithTargetProtocol:(Protocol*)targetProtocol replayBlock:(void (^)(id target, NSInvocation* invocation))block
+{
+    return [self initWithTargetProtocol:targetProtocol replayAction:[BBCDispatcherBlockReplayAction replayActionWithBlock:block]];
 }
 
 @end
