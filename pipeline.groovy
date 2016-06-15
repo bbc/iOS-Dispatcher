@@ -5,6 +5,8 @@
 PrepareWorkspaceStage = 'Prepare Workspace'
 UnitTestsStage = 'Unit Tests'
 LintPodspecStage = 'Lint Podspec'
+LibraryReleaseStage = 'Library Release'
+
 
 // Temporarily lock running builds on a node we know for sure has Swift 2.3
 BuildNodeIdentifier = 'MCE-iOS-10.11 - 2'
@@ -22,19 +24,75 @@ node(GitNodeIdentifier) {
 }
 
 stage UnitTestsStage
-node(BuildNodeIdentifier) {
+performNonPromotionStageWithNode(BuildNodeIdentifier) {
     runUnitTests()
 }
 
 stage LintPodspecStage
-node(CocoapodsNodeIdentifier) {
+performNonPromotionStageWithNode(CocoapodsNodeIdentifier) {
     lintPodspec()
+}
+
+stage PromoteVersionStage
+node(CocoapodsNodeIdentifier) {
+    promoteVersionNumbers(mobileCiSupport.isPromotion())
+}
+
+stage LibraryReleaseStage
+node(BuildNodeIdentifier) {
+	performLibraryRelease(mobileCiSupport.isPromotion())
+}
+
+stage PreparePromotionBadgeStage
+if(mobileCiSupport.isPromotion()) {
+    manager.addShortText('RELEASED v' + getMajorReleaseNumber() + ".${env.BUILD_NUMBER}")
+}
+else {
+    stagePromotion {
+        message 'Promote?'
+    }
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////
 // FUNCTIONS
 ///////////////////////////////////////////////////////////////////////////////
+
+def performNonPromotionStageWithNode(slaveTags, closure) {
+    if(mobileCiSupport.isPromotion()) {
+        echo 'Skipping stage as build is being promoted'
+    }
+    else {
+        node(slaveTags) { closure() }
+    }
+}
+
+def getMajorReleaseNumber() {
+    def releaseNumber = mobileCiSupport.retrieve(VersionNumberKey)
+    if(releaseNumber != null) {
+        releaseNumber = releaseNumber.replaceAll("\\s", "")
+    }
+
+    return releaseNumber
+}
+
+def setMajorReleaseNumber(majorNumber) {
+    mobileCiSupport.store(VersionNumberKey, majorNumber)
+}
+
+def setLastMajorReleaseHash(lastMajorReleaseHash) {
+    mobileCiSupport.store(VersionHashKey, lastMajorReleaseHash)
+}
+
+def initializeMajorReleaseNumber() {
+    def content = getMajorReleaseNumber()
+    if(content == null || content == '') {
+        content = '2'
+        setMajorReleaseNumber(content)
+    }
+
+    return content
+}
 
 def withinSourcesDirectory(closure) {
     dir('sources') {
@@ -61,7 +119,7 @@ def prepareWorkspace() {
     sh 'mkdir sources'
 
     withinSourcesDirectory {
-        git 'git@github.com:bbc/iOS-Dispatcher.git'
+        checkout scm
     }
 
     stashSourcesDirectory()
@@ -111,4 +169,62 @@ def lintPodspec() {
         sh 'ls -al'
         sh 'pod lib lint --allow-warnings --verbose'
     }
+}
+
+def promoteVersionNumbers(isPromotion) {
+    unstashSourcesDirectory()
+
+    if(isPromotion) {
+        setMajorReleaseNumber((getMajorReleaseNumber().toInteger() + 1).toString())
+        setLastMajorReleaseHash(getCurrentHash())
+    }
+
+    withinSourcesDirectory {
+    	def hash = mobileCiSupport.getFromHash()
+        def tag = version()
+        sh 'git tag ' + tag
+
+		if(isPromotion) {
+			def releaseBranchName = 'release/' + tag
+			sh 'git checkout -b ' + releaseBranchName
+			sh 'git checkout ' + hash
+		}
+
+        sh 'git push --all'
+    } 
+
+    stashSourcesDirectory()
+}
+
+def performLibraryRelease(stable) {
+    unstashSourcesDirectory()
+
+    def version = version()
+
+    withinSourcesDirectory {
+        echo 'Building Universal binary'
+        sh 'xcodebuild -project Dispatcher.xcodeproj -scheme "Dispatcher (iOS) Release" clean build'
+
+        dir('products') {
+            sh 'zip -yr Dispatcher.zip Dispatcher'
+        }
+
+        def libraryPath = 'products/Dispatcher.zip'
+        def prerelease = stable ? 'false' : 'true'
+        
+        withCredentials([[$class: 'StringBinding', credentialsId: 'd6cbe7e1-7321-4714-8bb3-b4523749bd9e', variable: 'accessToken']]) {
+            def accessToken = '$accessToken'
+            sh "./GithubRelease.sh " + version + " " + libraryPath + " " + accessToken + " " + prerelease
+        }
+    }
+}
+
+def version() {
+    def buildNumber = "${env.BUILD_NUMBER}"
+    return getMajorReleaseNumber() + '.' + buildNumber
+}
+
+def buildNumber() {
+    def buildNumber = "${env.BUILD_NUMBER}"
+    return buildNumber
 }
