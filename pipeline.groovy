@@ -181,21 +181,20 @@ def promoteVersionNumbers(isPromotion) {
 
     if(isPromotion) {
         setMajorReleaseNumber((getMajorReleaseNumber().toInteger() + 1).toString())
-        setLastMajorReleaseHash(getCurrentHash())
     }
 
     withinSourcesDirectory {
     	def hash = mobileCiSupport.getFromHash()
         def tag = version()
         sh 'git tag ' + tag
+        sh 'git push --tags'
 
 		if(isPromotion) {
 			def releaseBranchName = 'release/' + tag
 			sh 'git checkout -b ' + releaseBranchName
+            sh 'git push origin ' + releaseBranchName
 			sh 'git checkout ' + hash
 		}
-
-        sh 'git push --all'
     } 
 
     stashSourcesDirectory()
