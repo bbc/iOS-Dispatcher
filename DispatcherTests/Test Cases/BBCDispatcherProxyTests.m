@@ -7,6 +7,7 @@
 //
 
 #import "Dispatcher.h"
+#import "BBCDispatcherReplayLastInvocationAction.h"
 #import <XCTest/XCTest.h>
 
 @interface BBCDispatcherProxyTests : XCTestCase

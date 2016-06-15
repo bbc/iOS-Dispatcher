@@ -107,9 +107,9 @@
 		4B70EBD11D114EE2008976F1 /* Dispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CCB1CE9FA2900656557 /* Dispatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B70EBD21D114EE2008976F1 /* BBCDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CC91CE9FA2900656557 /* BBCDispatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B70EBD31D114EE2008976F1 /* BBCDispatcherProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CC21CE9FA2900656557 /* BBCDispatcherProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4B70EBD41D114EE2008976F1 /* BBCDispatcherReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4B70EBD51D114EE2008976F1 /* BBCDispatcherReplayLastInvocationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4B70EBD61D114EE2008976F1 /* BBCDispatcherBlockReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B70EBD41D114EE2008976F1 /* BBCDispatcherReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */; };
+		4B70EBD51D114EE2008976F1 /* BBCDispatcherReplayLastInvocationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */; };
+		4B70EBD61D114EE2008976F1 /* BBCDispatcherBlockReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */; };
 		4B70EBD71D114EEC008976F1 /* BBCCachingMethodSignatureProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CBB1CE9FA2900656557 /* BBCCachingMethodSignatureProvider.h */; };
 		4B70EBD81D114EEC008976F1 /* BBCClassMethodSignatureProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CBD1CE9FA2900656557 /* BBCClassMethodSignatureProvider.h */; };
 		4B70EBD91D114EEC008976F1 /* BBCMethodDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CBF1CE9FA2900656557 /* BBCMethodDescription.h */; };
@@ -142,26 +142,26 @@
 		4B888CDD1CE9FA2900656557 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B888CCC1CE9FA2900656557 /* Dispatcher.swift */; };
 		4B888CDE1CE9FA7600656557 /* Dispatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B888CA01CE9F0DA00656557 /* Dispatcher.framework */; };
 		4BA4ABC51CDC845A00D128B9 /* DispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4ABC41CDC845A00D128B9 /* DispatcherTests.swift */; };
-		4BD326E61D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4BD326E71D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4BD326E81D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4BD326E91D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BD326E61D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */; };
+		4BD326E71D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */; };
+		4BD326E81D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */; };
+		4BD326E91D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */; };
 		4BD326EA1D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326E51D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m */; };
 		4BD326EB1D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326E51D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m */; };
 		4BD326EC1D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326E51D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m */; };
 		4BD326ED1D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326E51D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m */; };
-		4BD326F01D01B3DC00A05F66 /* BBCDispatcherReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4BD326F11D01B3DC00A05F66 /* BBCDispatcherReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4BD326F21D01B3DC00A05F66 /* BBCDispatcherReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4BD326F31D01B3DC00A05F66 /* BBCDispatcherReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BD326F01D01B3DC00A05F66 /* BBCDispatcherReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */; };
+		4BD326F11D01B3DC00A05F66 /* BBCDispatcherReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */; };
+		4BD326F21D01B3DC00A05F66 /* BBCDispatcherReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */; };
+		4BD326F31D01B3DC00A05F66 /* BBCDispatcherReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */; };
 		4BD326F41D01B3DC00A05F66 /* BBCDispatcherReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326EF1D01B3DC00A05F66 /* BBCDispatcherReplayAction.m */; };
 		4BD326F51D01B3DC00A05F66 /* BBCDispatcherReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326EF1D01B3DC00A05F66 /* BBCDispatcherReplayAction.m */; };
 		4BD326F61D01B3DC00A05F66 /* BBCDispatcherReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326EF1D01B3DC00A05F66 /* BBCDispatcherReplayAction.m */; };
 		4BD326F71D01B3DC00A05F66 /* BBCDispatcherReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326EF1D01B3DC00A05F66 /* BBCDispatcherReplayAction.m */; };
-		4BD326FA1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4BD326FB1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4BD326FC1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4BD326FD1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BD326FA1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */; };
+		4BD326FB1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */; };
+		4BD326FC1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */; };
+		4BD326FD1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */; };
 		4BD326FE1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326F91D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m */; };
 		4BD326FF1D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326F91D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m */; };
 		4BD327001D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326F91D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m */; };
@@ -345,6 +345,12 @@
 		4B888CBA1CE9FA2900656557 /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */,
+				4BD326EF1D01B3DC00A05F66 /* BBCDispatcherReplayAction.m */,
+				4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */,
+				4BD326F91D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m */,
+				4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */,
+				4BD326E51D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m */,
 				4B888CBB1CE9FA2900656557 /* BBCCachingMethodSignatureProvider.h */,
 				4B888CBC1CE9FA2900656557 /* BBCCachingMethodSignatureProvider.m */,
 				4B888CBD1CE9FA2900656557 /* BBCClassMethodSignatureProvider.h */,
@@ -370,12 +376,6 @@
 				4B888CCA1CE9FA2900656557 /* BBCDispatcher.m */,
 				4B888CC21CE9FA2900656557 /* BBCDispatcherProxy.h */,
 				4B888CC31CE9FA2900656557 /* BBCDispatcherProxy.m */,
-				4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */,
-				4BD326EF1D01B3DC00A05F66 /* BBCDispatcherReplayAction.m */,
-				4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */,
-				4BD326F91D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m */,
-				4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */,
-				4BD326E51D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m */,
 			);
 			path = Public;
 			sourceTree = "<group>";

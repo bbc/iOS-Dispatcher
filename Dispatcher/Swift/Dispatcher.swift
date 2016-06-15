@@ -47,7 +47,7 @@ public struct Dispatcher<Target: NSObjectProtocol> {
         proxy.removeTarget(target)
     }
     
-    public nonmutating func dispatch() -> Target {
+    public func dispatch() -> Target {
         return target
     }
 
