@@ -5,8 +5,11 @@
 PrepareWorkspaceStage = 'Prepare Workspace'
 UnitTestsStage = 'Unit Tests'
 LintPodspecStage = 'Lint Podspec'
+PromoteVersionStage = 'Promote Version'
 LibraryReleaseStage = 'Library Release'
+PreparePromotionBadgeStage = 'Prepare Promotion Badge'
 
+VersionNumberKey = 'majorVersionNumber'
 
 // Temporarily lock running builds on a node we know for sure has Swift 2.3
 BuildNodeIdentifier = 'MCE-iOS-10.11 - 2'
@@ -24,14 +27,14 @@ node(GitNodeIdentifier) {
 }
 
 stage UnitTestsStage
-performNonPromotionStageWithNode(BuildNodeIdentifier) {
-    runUnitTests()
-}
+// performNonPromotionStageWithNode(BuildNodeIdentifier) {
+//     runUnitTests()
+// }
 
 stage LintPodspecStage
-performNonPromotionStageWithNode(CocoapodsNodeIdentifier) {
-    lintPodspec()
-}
+// performNonPromotionStageWithNode(CocoapodsNodeIdentifier) {
+//     lintPodspec()
+// }
 
 stage PromoteVersionStage
 node(CocoapodsNodeIdentifier) {
