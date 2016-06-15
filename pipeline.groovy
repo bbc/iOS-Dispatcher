@@ -187,7 +187,7 @@ def promoteVersionNumbers(isPromotion) {
     	def hash = mobileCiSupport.getFromHash()
         def tag = version()
         sh 'git tag ' + tag
-        sh 'git push --tags'
+        sh 'git push --tags --verbose'
 
 		if(isPromotion) {
 			def releaseBranchName = 'release/' + tag
