@@ -21,6 +21,8 @@ CocoapodsNodeIdentifier = 'Cocoapods-1'
 // PIPELINE
 ///////////////////////////////////////////////////////////////////////////////
 
+initializeMajorReleaseNumber()
+
 stage PrepareWorkspaceStage
 node(GitNodeIdentifier) {
     prepareWorkspace()
@@ -90,7 +92,7 @@ def setLastMajorReleaseHash(lastMajorReleaseHash) {
 def initializeMajorReleaseNumber() {
     def content = getMajorReleaseNumber()
     if(content == null || content == '') {
-        content = '2'
+        content = '0'
         setMajorReleaseNumber(content)
     }
 
