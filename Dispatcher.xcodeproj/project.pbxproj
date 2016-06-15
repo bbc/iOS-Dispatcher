@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		4B70EBB11D114E40008976F1 /* Dispatcher (iOS) Release */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4B70EBB41D114E40008976F1 /* Build configuration list for PBXAggregateTarget "Dispatcher (iOS) Release" */;
+			buildPhases = (
+				4B70EBB71D114E4C008976F1 /* Prepare Fat Binary */,
+			);
+			dependencies = (
+				4B70EBDF1D114EFB008976F1 /* PBXTargetDependency */,
+			);
+			name = "Dispatcher (iOS) Release";
+			productName = "Dispatcher (iOS) Release";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		4B3DB9C31CEC62B4006FDC7E /* Dispatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3DB9B21CEC6279006FDC7E /* Dispatcher.framework */; };
 		4B3DB9CB1CEC636F006FDC7E /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B888CCC1CE9FA2900656557 /* Dispatcher.swift */; };
@@ -78,6 +93,36 @@
 		4B3DBA431CEC9038006FDC7E /* BBCProtocolMethodSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B888CC71CE9FA2900656557 /* BBCProtocolMethodSignatureProvider.m */; };
 		4B3DBA441CEC9038006FDC7E /* BBCSelectorMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 7824A75A1CEB933C0004D96C /* BBCSelectorMap.h */; };
 		4B3DBA451CEC9038006FDC7E /* BBCSelectorMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7824A75B1CEB933C0004D96C /* BBCSelectorMap.m */; };
+		4B70EBC51D114EC6008976F1 /* BBCDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B888CCA1CE9FA2900656557 /* BBCDispatcher.m */; };
+		4B70EBC61D114EC6008976F1 /* BBCDispatcherProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B888CC31CE9FA2900656557 /* BBCDispatcherProxy.m */; };
+		4B70EBC71D114EC6008976F1 /* BBCDispatcherReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326EF1D01B3DC00A05F66 /* BBCDispatcherReplayAction.m */; };
+		4B70EBC81D114EC6008976F1 /* BBCDispatcherReplayLastInvocationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326F91D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.m */; };
+		4B70EBC91D114EC6008976F1 /* BBCDispatcherBlockReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326E51D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.m */; };
+		4B70EBCA1D114EC6008976F1 /* BBCCachingMethodSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B888CBC1CE9FA2900656557 /* BBCCachingMethodSignatureProvider.m */; };
+		4B70EBCB1D114EC6008976F1 /* BBCClassMethodSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B888CBE1CE9FA2900656557 /* BBCClassMethodSignatureProvider.m */; };
+		4B70EBCC1D114EC6008976F1 /* BBCMethodDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B888CC01CE9FA2900656557 /* BBCMethodDescription.m */; };
+		4B70EBCD1D114EC6008976F1 /* BBCDispatcherTargetCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B888CC51CE9FA2900656557 /* BBCDispatcherTargetCollection.m */; };
+		4B70EBCE1D114EC6008976F1 /* BBCProtocolMethodSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B888CC71CE9FA2900656557 /* BBCProtocolMethodSignatureProvider.m */; };
+		4B70EBCF1D114EC6008976F1 /* BBCSelectorMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7824A75B1CEB933C0004D96C /* BBCSelectorMap.m */; };
+		4B70EBD11D114EE2008976F1 /* Dispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CCB1CE9FA2900656557 /* Dispatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B70EBD21D114EE2008976F1 /* BBCDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CC91CE9FA2900656557 /* BBCDispatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B70EBD31D114EE2008976F1 /* BBCDispatcherProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CC21CE9FA2900656557 /* BBCDispatcherProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B70EBD41D114EE2008976F1 /* BBCDispatcherReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B70EBD51D114EE2008976F1 /* BBCDispatcherReplayLastInvocationAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B70EBD61D114EE2008976F1 /* BBCDispatcherBlockReplayAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B70EBD71D114EEC008976F1 /* BBCCachingMethodSignatureProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CBB1CE9FA2900656557 /* BBCCachingMethodSignatureProvider.h */; };
+		4B70EBD81D114EEC008976F1 /* BBCClassMethodSignatureProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CBD1CE9FA2900656557 /* BBCClassMethodSignatureProvider.h */; };
+		4B70EBD91D114EEC008976F1 /* BBCMethodDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CBF1CE9FA2900656557 /* BBCMethodDescription.h */; };
+		4B70EBDA1D114EEC008976F1 /* BBCMethodSignatureProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CC11CE9FA2900656557 /* BBCMethodSignatureProvider.h */; };
+		4B70EBDB1D114EEC008976F1 /* BBCDispatcherTargetCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CC41CE9FA2900656557 /* BBCDispatcherTargetCollection.h */; };
+		4B70EBDC1D114EEC008976F1 /* BBCProtocolMethodSignatureProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CC61CE9FA2900656557 /* BBCProtocolMethodSignatureProvider.h */; };
+		4B70EBDD1D114EEC008976F1 /* BBCSelectorMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 7824A75A1CEB933C0004D96C /* BBCSelectorMap.h */; };
+		4B70EBE01D114F5D008976F1 /* Dispatcher.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4B888CCB1CE9FA2900656557 /* Dispatcher.h */; };
+		4B70EBE11D114F5D008976F1 /* BBCDispatcher.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4B888CC91CE9FA2900656557 /* BBCDispatcher.h */; };
+		4B70EBE21D114F5D008976F1 /* BBCDispatcherProxy.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4B888CC21CE9FA2900656557 /* BBCDispatcherProxy.h */; };
+		4B70EBE31D114F5D008976F1 /* BBCDispatcherReplayAction.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4BD326EE1D01B3DC00A05F66 /* BBCDispatcherReplayAction.h */; };
+		4B70EBE41D114F5D008976F1 /* BBCDispatcherReplayLastInvocationAction.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4BD326F81D01B4A100A05F66 /* BBCDispatcherReplayLastInvocationAction.h */; };
+		4B70EBE51D114F5D008976F1 /* BBCDispatcherBlockReplayAction.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4BD326E41D01AE4200A05F66 /* BBCDispatcherBlockReplayAction.h */; };
 		4B888CCD1CE9FA2900656557 /* BBCCachingMethodSignatureProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CBB1CE9FA2900656557 /* BBCCachingMethodSignatureProvider.h */; };
 		4B888CCE1CE9FA2900656557 /* BBCCachingMethodSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B888CBC1CE9FA2900656557 /* BBCCachingMethodSignatureProvider.m */; };
 		4B888CCF1CE9FA2900656557 /* BBCClassMethodSignatureProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B888CBD1CE9FA2900656557 /* BBCClassMethodSignatureProvider.h */; };
@@ -148,7 +193,32 @@
 			remoteGlobalIDString = 4B3DB9E81CEC8E4C006FDC7E;
 			remoteInfo = "Dispatcher-tvOS";
 		};
+		4B70EBDE1D114EFB008976F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E99B32D1CD9235000C6C5CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B70EBBB1D114EAA008976F1;
+			remoteInfo = "Dispatcher (Legacy)";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4B70EBBA1D114EAA008976F1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				4B70EBE01D114F5D008976F1 /* Dispatcher.h in CopyFiles */,
+				4B70EBE11D114F5D008976F1 /* BBCDispatcher.h in CopyFiles */,
+				4B70EBE21D114F5D008976F1 /* BBCDispatcherProxy.h in CopyFiles */,
+				4B70EBE31D114F5D008976F1 /* BBCDispatcherReplayAction.h in CopyFiles */,
+				4B70EBE41D114F5D008976F1 /* BBCDispatcherReplayLastInvocationAction.h in CopyFiles */,
+				4B70EBE51D114F5D008976F1 /* BBCDispatcherBlockReplayAction.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4B3DB9B21CEC6279006FDC7E /* Dispatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dispatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +231,7 @@
 		4B3DBA531CEC93E1006FDC7E /* Info-watchOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
 		4B3DBA5A1CEC93F8006FDC7E /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		4B3DBA5B1CEC93F8006FDC7E /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		4B70EBBC1D114EAA008976F1 /* libDispatcher (Legacy).a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libDispatcher (Legacy).a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B888CA01CE9F0DA00656557 /* Dispatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dispatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B888CA41CE9F0DA00656557 /* Info-OSX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-OSX.plist"; sourceTree = "<group>"; };
 		4B888CBB1CE9FA2900656557 /* BBCCachingMethodSignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCCachingMethodSignatureProvider.h; path = ../Project/BBCCachingMethodSignatureProvider.h; sourceTree = "<group>"; };
@@ -240,6 +311,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4B3DBA271CEC8FE7006FDC7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B70EBB91D114EAA008976F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -329,6 +407,7 @@
 				4B3DB9E91CEC8E4C006FDC7E /* Dispatcher.framework */,
 				4B3DB9F21CEC8E4C006FDC7E /* DispatcherTests.xctest */,
 				4B3DBA2B1CEC8FE7006FDC7E /* Dispatcher.framework */,
+				4B70EBBC1D114EAA008976F1 /* libDispatcher (Legacy).a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -452,6 +531,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4B70EBD01D114ED3008976F1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B70EBD11D114EE2008976F1 /* Dispatcher.h in Headers */,
+				4B70EBD21D114EE2008976F1 /* BBCDispatcher.h in Headers */,
+				4B70EBD31D114EE2008976F1 /* BBCDispatcherProxy.h in Headers */,
+				4B70EBD41D114EE2008976F1 /* BBCDispatcherReplayAction.h in Headers */,
+				4B70EBD51D114EE2008976F1 /* BBCDispatcherReplayLastInvocationAction.h in Headers */,
+				4B70EBD61D114EE2008976F1 /* BBCDispatcherBlockReplayAction.h in Headers */,
+				4B70EBD71D114EEC008976F1 /* BBCCachingMethodSignatureProvider.h in Headers */,
+				4B70EBD81D114EEC008976F1 /* BBCClassMethodSignatureProvider.h in Headers */,
+				4B70EBD91D114EEC008976F1 /* BBCMethodDescription.h in Headers */,
+				4B70EBDA1D114EEC008976F1 /* BBCMethodSignatureProvider.h in Headers */,
+				4B70EBDB1D114EEC008976F1 /* BBCDispatcherTargetCollection.h in Headers */,
+				4B70EBDC1D114EEC008976F1 /* BBCProtocolMethodSignatureProvider.h in Headers */,
+				4B70EBDD1D114EEC008976F1 /* BBCSelectorMap.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B888C9D1CE9F0DA00656557 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -565,6 +664,24 @@
 			productReference = 4B3DBA2B1CEC8FE7006FDC7E /* Dispatcher.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		4B70EBBB1D114EAA008976F1 /* Dispatcher (Legacy) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B70EBC21D114EAA008976F1 /* Build configuration list for PBXNativeTarget "Dispatcher (Legacy)" */;
+			buildPhases = (
+				4B70EBB81D114EAA008976F1 /* Sources */,
+				4B70EBB91D114EAA008976F1 /* Frameworks */,
+				4B70EBBA1D114EAA008976F1 /* CopyFiles */,
+				4B70EBD01D114ED3008976F1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dispatcher (Legacy)";
+			productName = "Dispatcher (Legacy)";
+			productReference = 4B70EBBC1D114EAA008976F1 /* libDispatcher (Legacy).a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		4B888C9F1CE9F0DA00656557 /* Dispatcher-OSX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B888CA51CE9F0DA00656557 /* Build configuration list for PBXNativeTarget "Dispatcher-OSX" */;
@@ -625,6 +742,12 @@
 					4B3DBA2A1CEC8FE7006FDC7E = {
 						CreatedOnToolsVersion = 7.3;
 					};
+					4B70EBB11D114E40008976F1 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					4B70EBBB1D114EAA008976F1 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					4B888C9F1CE9F0DA00656557 = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -652,6 +775,8 @@
 				6E99B3421CD9267200C6C5CF /* DispatcherTests-OSX */,
 				4B3DB9BD1CEC62B4006FDC7E /* DispatcherTests-iOS */,
 				4B3DB9F11CEC8E4C006FDC7E /* DispatcherTests-tvOS */,
+				4B70EBBB1D114EAA008976F1 /* Dispatcher (Legacy) */,
+				4B70EBB11D114E40008976F1 /* Dispatcher (iOS) Release */,
 			);
 		};
 /* End PBXProject section */
@@ -707,6 +832,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4B70EBB71D114E4C008976F1 /* Prepare Fat Binary */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Prepare Fat Binary";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcodebuild -project Dispatcher.xcodeproj -target \"Dispatcher (Legacy)\" -sdk iphonesimulator\n\nxcodebuild -project Dispatcher.xcodeproj -target \"Dispatcher (Legacy)\" -sdk iphoneos\n\nrm -rf \"$SRCROOT/products/Dispatcher\"\nmkdir -p \"$SRCROOT/products/Dispatcher\"\n\nlipo -create \"$SOURCE_ROOT/build/Release-iphonesimulator/libDispatcher.a\" \"$SOURCE_ROOT/build/Release-iphoneos/libDispatcher.a\" -o \"$SOURCE_ROOT/products/Dispatcher/libDispatcher_Universal.a\"\n\ncp -a \"$SOURCE_ROOT/build/Release-iphoneos/include/Dispatcher (Legacy)/.\" \"$SOURCE_ROOT/products/Dispatcher/include\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4B3DB9AD1CEC6279006FDC7E /* Sources */ = {
@@ -794,6 +936,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4B70EBB81D114EAA008976F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B70EBC51D114EC6008976F1 /* BBCDispatcher.m in Sources */,
+				4B70EBC61D114EC6008976F1 /* BBCDispatcherProxy.m in Sources */,
+				4B70EBC71D114EC6008976F1 /* BBCDispatcherReplayAction.m in Sources */,
+				4B70EBC81D114EC6008976F1 /* BBCDispatcherReplayLastInvocationAction.m in Sources */,
+				4B70EBC91D114EC6008976F1 /* BBCDispatcherBlockReplayAction.m in Sources */,
+				4B70EBCA1D114EC6008976F1 /* BBCCachingMethodSignatureProvider.m in Sources */,
+				4B70EBCB1D114EC6008976F1 /* BBCClassMethodSignatureProvider.m in Sources */,
+				4B70EBCC1D114EC6008976F1 /* BBCMethodDescription.m in Sources */,
+				4B70EBCD1D114EC6008976F1 /* BBCDispatcherTargetCollection.m in Sources */,
+				4B70EBCE1D114EC6008976F1 /* BBCProtocolMethodSignatureProvider.m in Sources */,
+				4B70EBCF1D114EC6008976F1 /* BBCSelectorMap.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B888C9B1CE9F0DA00656557 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -839,6 +999,11 @@
 			isa = PBXTargetDependency;
 			target = 4B3DB9E81CEC8E4C006FDC7E /* Dispatcher-tvOS */;
 			targetProxy = 4B3DB9F41CEC8E4C006FDC7E /* PBXContainerItemProxy */;
+		};
+		4B70EBDF1D114EFB008976F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B70EBBB1D114EAA008976F1 /* Dispatcher (Legacy) */;
+			targetProxy = 4B70EBDE1D114EFB008976F1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1043,6 +1208,45 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		4B70EBB21D114E40008976F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4B70EBB31D114E40008976F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4B70EBC31D114EAA008976F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4B70EBC41D114EAA008976F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -1255,6 +1459,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		4B70EBB41D114E40008976F1 /* Build configuration list for PBXAggregateTarget "Dispatcher (iOS) Release" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B70EBB21D114E40008976F1 /* Debug */,
+				4B70EBB31D114E40008976F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4B70EBC21D114EAA008976F1 /* Build configuration list for PBXNativeTarget "Dispatcher (Legacy)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B70EBC31D114EAA008976F1 /* Debug */,
+				4B70EBC41D114EAA008976F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		4B888CA51CE9F0DA00656557 /* Build configuration list for PBXNativeTarget "Dispatcher-OSX" */ = {
 			isa = XCConfigurationList;
