@@ -74,4 +74,9 @@ CFHashCode BBCPointerDictionaryHashCallback(const void* value)
     return (__bridge id)CFDictionaryGetValue(_storage, aSelector);
 }
 
+- (NSArray *)allObjects
+{
+    return [(__bridge NSDictionary *)_storage allValues];
+}
+
 @end

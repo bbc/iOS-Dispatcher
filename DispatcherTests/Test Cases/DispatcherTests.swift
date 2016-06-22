@@ -59,4 +59,12 @@ class DispatcherTests: XCTestCase {
         XCTAssertTrue(target === receievedTarget)
     }
     
+    func testAddingTargetIndicatesDispatcherContainsTarget() {
+        var sut = Dispatcher(class: BBCMockZeroArgumentsTarget.self)
+        let target = BBCMockZeroArgumentsTarget()
+        sut.addTarget(target)
+        
+        XCTAssertTrue(sut.contains(target))
+    }
+    
 }

@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithSelectors:(NSArray<NSValue *> *)selectors NS_DESIGNATED_INITIALIZER;
 
+@property (nonatomic, readonly) NSArray *allTargets;
+
 - (void)addTarget:(id)target;
 - (void)removeTarget:(id)target;
 - (NSArray*)targetsRespondingToSelector:(SEL)aSelector;

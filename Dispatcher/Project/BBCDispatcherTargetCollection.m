@@ -63,4 +63,14 @@
     return [_storage objectForSelector:aSelector];
 }
 
+- (NSArray*)allTargets
+{
+    NSMutableSet* targets = [NSMutableSet set];
+    for (NSArray* subStorage in _storage.allObjects) {
+        [targets addObjectsFromArray:subStorage];
+    }
+
+    return [targets allObjects];
+}
+
 @end

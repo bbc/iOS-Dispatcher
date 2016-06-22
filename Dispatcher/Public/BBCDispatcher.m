@@ -66,6 +66,11 @@
 
 #pragma mark Public
 
+- (NSArray*)allTargets
+{
+    return _proxy.allTargets;
+}
+
 - (void)addTarget:(id)target
 {
     [_proxy addTarget:target];
@@ -79,6 +84,11 @@
 - (id)dispatch
 {
     return _proxy;
+}
+
+- (BOOL)containsTarget:(id)target
+{
+    return [_proxy.allTargets containsObject:target];
 }
 
 @end

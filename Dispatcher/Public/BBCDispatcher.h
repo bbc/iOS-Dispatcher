@@ -19,15 +19,16 @@ NS_SWIFT_UNAVAILABLE("Use the Dispatcher struct instead")
 - (void)addTarget:(Target)target;
 - (void)removeTarget:(Target)target;
 - (Target)dispatch;
+- (BOOL)containsTarget:(Target)target;
 
 @end
 
 @interface BBCDispatcher <__covariant Target> (Blocks)
 
 - (instancetype)initWithTargetClass:(Class)targetClass
-                        replayBlock:(void(^)(Target target, NSInvocation *invocation))block;
+                           replayBlock:(void (^)(Target target, NSInvocation* invocation))block;
 - (instancetype)initWithTargetProtocol:(Protocol*)targetProtocol
-                           replayBlock:(void(^)(Target target, NSInvocation *invocation))block;
+                           replayBlock:(void (^)(Target target, NSInvocation* invocation))block;
 
 @end
 

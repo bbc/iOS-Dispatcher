@@ -70,6 +70,11 @@
 
 #pragma mark Public
 
+- (NSArray *)allTargets
+{
+    return _targets.allTargets;
+}
+
 - (void)addTarget:(id)target
 {
     [_targets addTarget:target];

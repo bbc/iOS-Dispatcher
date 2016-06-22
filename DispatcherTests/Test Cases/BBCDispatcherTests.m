@@ -48,7 +48,7 @@
     BBCDispatcher<BBCMockZeroArgumentsTarget*>* sut = [[BBCDispatcher alloc] initWithTargetClass:[BBCMockZeroArgumentsTarget class] replayBlock:^(BBCMockZeroArgumentsTarget* _Nonnull target, __unused NSInvocation* _Nonnull invocation) {
         receievedTarget = target;
     }];
-    
+
     BBCMockZeroArgumentsTarget* target = [BBCMockZeroArgumentsTarget new];
     [[sut dispatch] zeroArgumentsMessage];
     [sut addTarget:target];
@@ -102,7 +102,7 @@
     BBCDispatcher<id<BBCMockTargetProtocolWithRequiredMethod> >* sut = [[BBCDispatcher alloc] initWithTargetProtocol:@protocol(BBCMockTargetProtocolWithRequiredMethod) replayBlock:^(id<BBCMockTargetProtocolWithRequiredMethod> _Nonnull target, __unused NSInvocation* _Nonnull invocation) {
         receievedTarget = target;
     }];
-    
+
     BBCMockTargetProtocolWithRequiredMethodImpl* target = [BBCMockTargetProtocolWithRequiredMethodImpl new];
     [[sut dispatch] performRequiredMethod];
     [sut addTarget:target];
@@ -119,6 +119,15 @@
     [[sut dispatch] zeroArgumentsMessage];
 
     XCTAssertFalse(target.receievedMessage);
+}
+
+- (void)testAddingTargetIndicatesDispatcherContainsTarget
+{
+    BBCDispatcher<BBCMockZeroArgumentsTarget*>* sut = [[BBCDispatcher alloc] initWithTargetClass:[BBCMockZeroArgumentsTarget class]];
+    BBCMockZeroArgumentsTarget* target = [BBCMockZeroArgumentsTarget new];
+    [sut addTarget:target];
+
+    XCTAssertTrue([sut containsTarget:target]);
 }
 
 - (void)testPerformanceWhenDispatchingMessageWithClassTargets

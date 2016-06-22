@@ -60,5 +60,9 @@ public struct Dispatcher<Target: NSObjectProtocol> {
     public func dispatch() -> Target {
         return target
     }
+    
+    public func contains(target: Target) -> Bool {
+        return proxy.allTargets.contains { item in item === target }
+    }
 
 }

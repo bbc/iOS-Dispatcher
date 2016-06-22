@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)map;
 
+@property (nonatomic, readonly) NSArray<ObjectType> *allObjects;
+
 - (void)setObject:(ObjectType)object forSelector:(SEL)aSelector;
 - (void)removeObjectForSelector:(SEL)aSelector;
 - (nullable ObjectType)objectForSelector:(SEL)aSelector;
