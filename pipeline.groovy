@@ -11,7 +11,7 @@ PreparePromotionBadgeStage = 'Prepare Promotion Badge'
 
 VersionNumberKey = 'majorVersionNumber'
 
-// Temporarily lock running builds on a node we know for sure has Swift 2.3
+// Temporarily lock running builds on a node we know has Swift 2.3
 BuildNodeIdentifier = 'MCE-iOS-10.11 - 2'
 GitNodeIdentifier = 'git'
 CocoapodsNodeIdentifier = 'Cocoapods-1'
@@ -29,14 +29,14 @@ node(GitNodeIdentifier) {
 }
 
 stage UnitTestsStage
-// performNonPromotionStageWithNode(BuildNodeIdentifier) {
-//     runUnitTests()
-// }
+performNonPromotionStageWithNode(BuildNodeIdentifier) {
+    runUnitTests()
+}
 
 stage LintPodspecStage
-// performNonPromotionStageWithNode(CocoapodsNodeIdentifier) {
-//     lintPodspec()
-// }
+performNonPromotionStageWithNode(CocoapodsNodeIdentifier) {
+    lintPodspec()
+}
 
 stage PromoteVersionStage
 node(CocoapodsNodeIdentifier) {
@@ -141,7 +141,7 @@ def runUnitTests() {
 		runUnitTests("Dispatcher (iOS)", "iOS Simulator,name=iPhone 6")
 		runUnitTests("Dispatcher (tvOS)", "tvOS Simulator,name=Apple TV 1080p")
 
-		// We can't run tests on watchOS, but lets at least make sure it builds...
+		// We can't run tests on watchOS, but lets at least make sure it builds
 		xcodebuild("Dispatcher (watchOS)", "watchOS Simulator,name=Apple Watch - 42mm", "clean build")
 	}
 }
@@ -150,14 +150,7 @@ def runUnitTests(scheme, platform) {
 	try {
 		xcodebuild(scheme, platform, "clean test")
     } catch (exc) {
-        emailext attachLog: true,
-                body: 'iOS-Dispatcher tests failed\n\nSee attached log for details',
-                from: 'Androidplayer@bbc.co.uk',
-                mimeType: 'text/plain',
-                replyTo: 'thomas.sherwood@bbc.co.uk',
-                subject: 'iOS-Dispatcher tests failed',
-                to: 'thomas.sherwood@bbc.co.uk'
-
+        echo 'Tests failed for platform: ' + platform
         throw exc
     }
 }
