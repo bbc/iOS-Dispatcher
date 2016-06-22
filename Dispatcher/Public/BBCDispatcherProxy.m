@@ -112,7 +112,7 @@
 {
     [_replayAction trackInvocation:invocation];
 
-    for (id target in [_targets targetsRespondingToSelector:invocation.selector]) {
+    for (id target in [[_targets targetsRespondingToSelector:invocation.selector] copy]) {
         [invocation invokeWithTarget:target];
     }
 }

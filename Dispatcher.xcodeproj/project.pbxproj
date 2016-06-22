@@ -93,6 +93,9 @@
 		4B3DBA431CEC9038006FDC7E /* BBCProtocolMethodSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B888CC71CE9FA2900656557 /* BBCProtocolMethodSignatureProvider.m */; };
 		4B3DBA441CEC9038006FDC7E /* BBCSelectorMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 7824A75A1CEB933C0004D96C /* BBCSelectorMap.h */; };
 		4B3DBA451CEC9038006FDC7E /* BBCSelectorMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7824A75B1CEB933C0004D96C /* BBCSelectorMap.m */; };
+		4B4245D41D1AA63F0049DBA1 /* BBCDispatcherMutatorTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4245D31D1AA63F0049DBA1 /* BBCDispatcherMutatorTarget.m */; };
+		4B4245D51D1AA63F0049DBA1 /* BBCDispatcherMutatorTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4245D31D1AA63F0049DBA1 /* BBCDispatcherMutatorTarget.m */; };
+		4B4245D61D1AA63F0049DBA1 /* BBCDispatcherMutatorTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4245D31D1AA63F0049DBA1 /* BBCDispatcherMutatorTarget.m */; };
 		4B70EBC51D114EC6008976F1 /* BBCDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B888CCA1CE9FA2900656557 /* BBCDispatcher.m */; };
 		4B70EBC61D114EC6008976F1 /* BBCDispatcherProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B888CC31CE9FA2900656557 /* BBCDispatcherProxy.m */; };
 		4B70EBC71D114EC6008976F1 /* BBCDispatcherReplayAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD326EF1D01B3DC00A05F66 /* BBCDispatcherReplayAction.m */; };
@@ -241,6 +244,8 @@
 		4B3DBA531CEC93E1006FDC7E /* Info-watchOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
 		4B3DBA5A1CEC93F8006FDC7E /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		4B3DBA5B1CEC93F8006FDC7E /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		4B4245D21D1AA63F0049DBA1 /* BBCDispatcherMutatorTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCDispatcherMutatorTarget.h; path = "Test Mocks/BBCDispatcherMutatorTarget.h"; sourceTree = "<group>"; };
+		4B4245D31D1AA63F0049DBA1 /* BBCDispatcherMutatorTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCDispatcherMutatorTarget.m; path = "Test Mocks/BBCDispatcherMutatorTarget.m"; sourceTree = "<group>"; };
 		4B70EBBC1D114EAA008976F1 /* libDispatcher (Legacy).a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libDispatcher (Legacy).a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B70EBE61D115B07008976F1 /* BBCSwiftClosureReplayAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCSwiftClosureReplayAction.h; sourceTree = "<group>"; };
 		4B70EBE71D115B07008976F1 /* BBCSwiftClosureReplayAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCSwiftClosureReplayAction.m; sourceTree = "<group>"; };
@@ -478,6 +483,8 @@
 				6E5C626F1CD94F01003CC4CD /* BBCMockTargetProtocolWithRequiredMethod.h */,
 				6E5C62701CD94F18003CC4CD /* BBCMockTargetProtocolWithRequiredMethodImpl.h */,
 				6E5C62711CD94F18003CC4CD /* BBCMockTargetProtocolWithRequiredMethodImpl.m */,
+				4B4245D21D1AA63F0049DBA1 /* BBCDispatcherMutatorTarget.h */,
+				4B4245D31D1AA63F0049DBA1 /* BBCDispatcherMutatorTarget.m */,
 			);
 			name = "Test Mocks";
 			sourceTree = "<group>";
@@ -894,6 +901,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4245D51D1AA63F0049DBA1 /* BBCDispatcherMutatorTarget.m in Sources */,
 				4B3DB9E11CEC637F006FDC7E /* BBCMockConformingProtocolTarget.m in Sources */,
 				4B3DB9DF1CEC637F006FDC7E /* DispatcherTests.swift in Sources */,
 				4B3DB9E21CEC637F006FDC7E /* BBCMockNonConformingProtocolTarget.m in Sources */,
@@ -928,6 +936,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4245D61D1AA63F0049DBA1 /* BBCDispatcherMutatorTarget.m in Sources */,
 				4B3DBA161CEC8EEF006FDC7E /* BBCMockConformingProtocolTarget.m in Sources */,
 				4B3DBA141CEC8EEF006FDC7E /* DispatcherTests.swift in Sources */,
 				4B3DBA171CEC8EEF006FDC7E /* BBCMockNonConformingProtocolTarget.m in Sources */,
@@ -1001,6 +1010,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4245D41D1AA63F0049DBA1 /* BBCDispatcherMutatorTarget.m in Sources */,
 				6E5C62671CD93FA8003CC4CD /* BBCMockConformingProtocolTarget.m in Sources */,
 				6E5C626A1CD93FFB003CC4CD /* BBCMockNonConformingProtocolTarget.m in Sources */,
 				6E99B34C1CD926A700C6C5CF /* BBCDispatcherTests.m in Sources */,
@@ -1497,6 +1507,7 @@
 				4B70EBB31D114E40008976F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B70EBC21D114EAA008976F1 /* Build configuration list for PBXNativeTarget "Dispatcher (Legacy)" */ = {
 			isa = XCConfigurationList;
@@ -1505,6 +1516,7 @@
 				4B70EBC41D114EAA008976F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B888CA51CE9F0DA00656557 /* Build configuration list for PBXNativeTarget "Dispatcher-OSX" */ = {
 			isa = XCConfigurationList;

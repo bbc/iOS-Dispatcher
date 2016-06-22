@@ -6,6 +6,7 @@
 //  Copyright © 2016 BBC. All rights reserved.
 //
 
+#import "BBCDispatcherMutatorTarget.h"
 #import "BBCMockConformingProtocolTarget.h"
 #import "BBCMockNonConformingProtocolTarget.h"
 #import "BBCMockTargetProtocolWithRequiredMethodImpl.h"
@@ -128,6 +129,15 @@
     [sut addTarget:target];
 
     XCTAssertTrue([sut containsTarget:target]);
+}
+
+- (void)testAddingTargetWhileDispatcherIsMessagingExistingTargetsDoesNotCrash
+{
+    BBCDispatcher<BBCDispatcherMutatorTarget*>* sut = [[BBCDispatcher alloc] initWithTargetClass:[BBCDispatcherMutatorTarget class]];
+    [sut addTarget:[BBCDispatcherMutatorTarget new]];
+    [sut addTarget:[BBCDispatcherMutatorTarget new]];
+
+    XCTAssertNoThrow([[sut dispatch] mutate:sut]);
 }
 
 - (void)testPerformanceWhenDispatchingMessageWithClassTargets
