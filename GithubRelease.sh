@@ -6,7 +6,7 @@ LIBRARY_PATH=$2
 ACCESS_TOKEN=$3
 PRERELEASE=$4
 
-PACKAGE_NAME="smp-ios-$LIBRARY_VERSION.zip"
+PACKAGE_NAME="iOS-Dispatcher-$LIBRARY_VERSION.zip"
 RELEASE_NOTES_NAME="Notes-$LIBRARY_VERSION.txt"
 
 API_JSON=$(printf '{"tag_name": "%s", "target_commitish": "master", "name": "%s", "body": "Release of version %s", "draft": false, "prerelease": %s}' $LIBRARY_VERSION $LIBRARY_VERSION $LIBRARY_VERSION $PRERELEASE)
