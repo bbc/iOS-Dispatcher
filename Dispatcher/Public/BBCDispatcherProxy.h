@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BBCDispatcherProxy : NSProxy
 
 @property (nonatomic, strong, null_resettable) BBCDispatcherReplayAction *replayAction;
-@property (nonatomic, readonly) NSArray *allTargets;
+@property (nonatomic, readonly) NSArray<NSObject *> *allTargets;
 
 + (instancetype)proxyForClass:(Class)aClass;
 + (instancetype)proxyForProtocol:(Protocol *)aProtocol;

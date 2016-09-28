@@ -16,7 +16,7 @@ class DispatcherTests: XCTestCase {
     func testForwardingMessageForClassType() {
         var sut = Dispatcher(class: BBCMockZeroArgumentsTarget.self)
         let target = BBCMockZeroArgumentsTarget()
-        sut.addTarget(target)
+        sut.add(target: target)
         sut.dispatch().zeroArgumentsMessage()
         
         XCTAssertTrue(target.receievedMessage)
@@ -25,7 +25,7 @@ class DispatcherTests: XCTestCase {
     func testForwardingMessageForProtocolType() {
         var sut: Dispatcher<BBCMockTargetProtocol> = Dispatcher(protocol: BBCMockTargetProtocol.self)
         let target = BBCMockConformingProtocolTarget()
-        sut.addTarget(target)
+        sut.add(target: target)
         sut.dispatch().notify?()
         
         XCTAssertTrue(target.notified)
@@ -34,8 +34,8 @@ class DispatcherTests: XCTestCase {
     func testRemovingTargetThenDispatchingMessageDoesNotNotifyTarget() {
         var sut = Dispatcher(class: BBCMockZeroArgumentsTarget.self)
         let target = BBCMockZeroArgumentsTarget()
-        sut.addTarget(target)
-        sut.removeTarget(target)
+        sut.add(target: target)
+        sut.remove(target: target)
         sut.dispatch().zeroArgumentsMessage()
         
         XCTAssertFalse(target.receievedMessage)
@@ -45,7 +45,7 @@ class DispatcherTests: XCTestCase {
         var receievedTarget: BBCMockZeroArgumentsTarget!
         var sut = Dispatcher(class: BBCMockZeroArgumentsTarget.self, replayBlock: { receievedTarget = $0 } )
         let target = BBCMockZeroArgumentsTarget()
-        sut.addTarget(target)
+        sut.add(target: target)
         
         XCTAssertEqual(target, receievedTarget)
     }
@@ -54,7 +54,7 @@ class DispatcherTests: XCTestCase {
         var receievedTarget: BBCMockTargetProtocol!
         var sut: Dispatcher<BBCMockTargetProtocol> = Dispatcher(protocol: BBCMockTargetProtocol.self, replayBlock: { receievedTarget = $0 } )
         let target = BBCMockConformingProtocolTarget()
-        sut.addTarget(target)
+        sut.add(target: target)
         
         XCTAssertTrue(target === receievedTarget)
     }
@@ -62,9 +62,9 @@ class DispatcherTests: XCTestCase {
     func testAddingTargetIndicatesDispatcherContainsTarget() {
         var sut = Dispatcher(class: BBCMockZeroArgumentsTarget.self)
         let target = BBCMockZeroArgumentsTarget()
-        sut.addTarget(target)
+        sut.add(target: target)
         
-        XCTAssertTrue(sut.contains(target))
+        XCTAssertTrue(sut.contains(target: target))
     }
     
 }

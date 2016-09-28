@@ -15,8 +15,8 @@ public struct Dispatcher<Target: NSObjectProtocol> {
     
     // MARK: Properties
     
-    private let proxy: BBCDispatcherProxy
-    private let target: Target
+    fileprivate let proxy: BBCDispatcherProxy
+    fileprivate let target: Target
     
     
     // MARK: Initialization
@@ -49,11 +49,11 @@ public struct Dispatcher<Target: NSObjectProtocol> {
     
     // MARK: Dispatch Management
     
-    public mutating func addTarget(target: Target) {
+    public mutating func add(target: Target) {
         proxy.addTarget(target)
     }
     
-    public mutating func removeTarget(target: Target) {
+    public mutating func remove(target: Target) {
         proxy.removeTarget(target)
     }
     

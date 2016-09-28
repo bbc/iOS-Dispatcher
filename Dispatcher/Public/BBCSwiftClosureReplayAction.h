@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BBCSwiftClosureReplayAction : BBCDispatcherReplayAction<id<NSObject>>
+@interface BBCSwiftClosureReplayAction : BBCDispatcherReplayAction
 
 - (instancetype)initWithClosure:(nullable void(^)(id<NSObject> target))closure NS_DESIGNATED_INITIALIZER;
 
