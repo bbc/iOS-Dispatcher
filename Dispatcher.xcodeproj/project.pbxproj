@@ -246,7 +246,7 @@
 		4B3DBA5B1CEC93F8006FDC7E /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		4B4245D21D1AA63F0049DBA1 /* BBCDispatcherMutatorTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBCDispatcherMutatorTarget.h; path = "Test Mocks/BBCDispatcherMutatorTarget.h"; sourceTree = "<group>"; };
 		4B4245D31D1AA63F0049DBA1 /* BBCDispatcherMutatorTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBCDispatcherMutatorTarget.m; path = "Test Mocks/BBCDispatcherMutatorTarget.m"; sourceTree = "<group>"; };
-		4B70EBBC1D114EAA008976F1 /* libDispatcher (Legacy).a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libDispatcher (Legacy).a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B70EBBC1D114EAA008976F1 /* libDispatcher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDispatcher.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B70EBE61D115B07008976F1 /* BBCSwiftClosureReplayAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCSwiftClosureReplayAction.h; sourceTree = "<group>"; };
 		4B70EBE71D115B07008976F1 /* BBCSwiftClosureReplayAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCSwiftClosureReplayAction.m; sourceTree = "<group>"; };
 		4B888CA01CE9F0DA00656557 /* Dispatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dispatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -426,7 +426,7 @@
 				4B3DB9E91CEC8E4C006FDC7E /* Dispatcher.framework */,
 				4B3DB9F21CEC8E4C006FDC7E /* DispatcherTests.xctest */,
 				4B3DBA2B1CEC8FE7006FDC7E /* Dispatcher.framework */,
-				4B70EBBC1D114EAA008976F1 /* libDispatcher (Legacy).a */,
+				4B70EBBC1D114EAA008976F1 /* libDispatcher.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -705,7 +705,7 @@
 			);
 			name = "Dispatcher (Legacy)";
 			productName = "Dispatcher (Legacy)";
-			productReference = 4B70EBBC1D114EAA008976F1 /* libDispatcher (Legacy).a */;
+			productReference = 4B70EBBC1D114EAA008976F1 /* libDispatcher.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		4B888C9F1CE9F0DA00656557 /* Dispatcher-OSX */ = {
@@ -1287,7 +1287,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Dispatcher;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -1299,7 +1299,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Dispatcher;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
